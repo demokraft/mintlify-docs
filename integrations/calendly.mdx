@@ -1,0 +1,82 @@
+---
+title: "Let Prospects Book Meetings Inside Your AI Hub Demo"
+sidebarTitle: Calendly
+description: "The Calendly integration embeds a meeting booking CTA inside AI Hub sessions so prospects can schedule directly while watching your demo."
+---
+
+The Calendly integration lets you turn a demo session into a booked meeting without asking your prospect to open a new tab or hunt for a scheduling link. A booking CTA appears inside the AI Hub session at a moment you control — end of session, after qualifying questions, always visible, or triggered by the AI agent — and the booking is automatically logged in Lead Intelligence and synced to your CRM.
+
+## What it does
+
+When Calendly is connected to DemoKraft AI:
+
+- Visitors can book a meeting without leaving the demo session
+- The booking is recorded in the visitor's Lead Intelligence profile as the session CTA outcome
+- The meeting syncs automatically to HubSpot or Salesforce if those integrations are active
+- A Slack alert fires if the Slack integration is connected
+
+## Setup
+
+<Steps>
+  <Step title="Connect your Calendly account">
+    Go to **Settings → Integrations → Calendly** and click **Connect**. Complete the OAuth flow with your Calendly credentials. Once connected, your Calendly event types become available to select in session settings.
+  </Step>
+  <Step title="Add the booking CTA to a session">
+    Open the AI Hub session where you want the CTA to appear. Go to **Session Settings → CTA**, select **Book a Meeting (Calendly)**, and configure the CTA:
+
+    - **Calendly event type** — choose the event type that fits this session's audience (for example, a 30-minute discovery call or a 45-minute technical demo)
+    - **Button label** — use clear, specific text like _Book a 30-min demo_ or _Talk to Sales_
+    - **Placement** — choose when and where the button appears (see placement options below)
+  </Step>
+  <Step title="Test the booking flow">
+    Click **Preview Session** to run through the demo as a visitor. Click the CTA button and complete a test booking. Verify that the booking appears in your Calendly calendar and in the DemoKraft AI Lead Intelligence panel before going live.
+  </Step>
+</Steps>
+
+## CTA placement options
+
+| Placement | When it appears |
+|---|---|
+| **End of session** | After all content has played |
+| **After qualifying questions** | Immediately after the agent finishes qualifying |
+| **Floating button** | Visible at all times during the session |
+| **Triggered by agent** | Agent offers the booking link at a point you configure |
+
+<Tip>
+  Use the **Floating button** placement for high-intent sessions where you want booking to be available as soon as the prospect is ready — without waiting for the session to end.
+</Tip>
+
+## What gets recorded
+
+When a visitor books a meeting through the Calendly CTA in a session:
+
+- The Lead Intelligence profile is updated: **CTA Outcome → Meeting Booked**
+- The meeting date, time, and Calendly event type are recorded in the profile
+- The booking syncs to the visitor's HubSpot or Salesforce contact record if those integrations are active
+- A Slack alert fires with the visitor's full session summary if Slack is connected
+
+Your sales team sees the prospect's complete engagement profile — features watched, questions asked, and qualification score — before the first call, so every conversation starts from a position of insight.
+
+## Using multiple Calendly event types
+
+Configure different Calendly event types for different sessions to match the right meeting format to the right stage of the funnel:
+
+- **Top-of-funnel sessions** → 15-minute discovery call
+- **Mid-funnel evaluation sessions** → 45-minute technical demo
+- **Enterprise sessions** → Custom enterprise conversation
+
+Open each session's **CTA settings** individually and select the appropriate Calendly event type.
+
+## Connecting without OAuth
+
+If you prefer not to connect Calendly via OAuth, you can still add a Calendly link as a CTA:
+
+1. Copy your Calendly booking link from your Calendly account.
+2. In **Session Settings → CTA**, select **External Link** as the CTA type.
+3. Paste your Calendly link as the destination URL.
+
+Click-throughs are tracked in Lead Intelligence. Booking sync to your CRM is **not** available without the OAuth connection — only the click event is recorded, not the booking details.
+
+<Note>
+  For full booking tracking, meeting date recording, and CRM sync, the OAuth connection is strongly recommended over the external link approach.
+</Note>

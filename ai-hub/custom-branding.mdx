@@ -1,0 +1,103 @@
+---
+title: "White-Label AI Hub with Your Brand, Domain, and Fonts"
+sidebarTitle: Custom Branding
+description: Remove DemoKraft AI branding and host Hub sessions on your own subdomain with a full brand kit including logo, colours, and custom fonts.
+---
+
+By default, your AI Hub content is hosted at `[your-workspace].demokraft.ai` — functional from day one, but not exactly your brand. Custom Branding gives you full white-label control: your own subdomain, your logo, your colours, your fonts, and your email sender address. When a prospect opens your demo link, every pixel they see carries your brand identity. No DemoKraft AI badge, no third-party domain in the address bar, no mixed-brand email sender. Your demo experience looks and feels like a product your team built.
+
+<Note>
+  Custom Domain and Brand Kit are available on **Growth and Enterprise plans**. On the Starter plan and during a free trial, the DemoKraft AI badge is displayed and content is served from the `demokraft.ai` domain.
+</Note>
+
+<Steps>
+  <Step title="Set up your custom domain">
+    1. Go to **Settings → Custom Domain** and enter the subdomain you want to use — for example, `demos.yourcompany.com` or `hub.yourcompany.com`.
+    2. Click **Add Domain**. DemoKraft AI will display the CNAME record you need to add.
+    3. Log in to your DNS provider (Cloudflare, GoDaddy, Namecheap, or wherever your domain is managed) and add the following record:
+
+    | Type | Host | Value |
+    |---|---|---|
+    | CNAME | `demos` (or your chosen subdomain prefix) | `cname.demokraft.ai` |
+
+    4. Return to **Settings → Custom Domain** and click **Verify DNS**.
+    5. Once verified, click **Activate**. SSL is provisioned automatically — your domain is served over HTTPS with no extra configuration.
+
+    DNS propagation typically takes between 5 and 30 minutes. Your Hub content will be live at your custom domain within 24 hours of a successful DNS propagation in most cases.
+
+    <Note>
+      All existing share links on the `demokraft.ai` domain continue to work after you activate a custom domain. Update them to your new domain at your own pace — there is no forced cutover.
+    </Note>
+  </Step>
+  <Step title="Configure your Brand Kit">
+    Go to **Settings → Brand Kit** and set up your visual identity:
+
+    **Logo**
+
+    Upload your company logo in SVG (preferred) or PNG with a transparent background. Provide two versions:
+
+    - **Dark logo** — displayed when the Hub background is dark (the default player theme).
+    - **Light logo** — displayed when the Hub background is light, such as when the player is embedded on a white-background page.
+
+    Your logo appears in the Hub player header, step-by-step doc headers, motion scene Intros and Outros, and automated email notifications sent to viewers.
+
+    **Colours**
+
+    | Setting | Where it applies |
+    |---|---|
+    | Primary colour | Buttons, links, active states, and progress bars |
+    | Secondary colour | Accents, badges, and highlights |
+    | Background colour | Hub player background — defaults to dark if left blank |
+    | Text colour | Body text in step-by-step docs |
+
+    **Fonts**
+
+    Upload custom font files in TTF or OTF format to use in step-by-step docs and motion scenes. Web-safe fallbacks are applied automatically if fonts fail to load in a viewer's browser.
+  </Step>
+  <Step title="Customise your email sender">
+    Hub sends automated emails to viewers — session access links, session recaps, meeting confirmations, and follow-ups. By default these come from `noreply@demokraft.ai`.
+
+    To send from your own domain:
+
+    1. Go to **Settings → Email Sender**.
+    2. Enter your desired sender address — for example, `demos@yourcompany.com`.
+    3. Add the SPF and DKIM DNS records shown on the settings page to your DNS provider.
+    4. Click **Verify** and then **Activate**.
+
+    Automated emails will now display your company name and domain as the sender, with no reference to DemoKraft AI in the From field or email footer.
+  </Step>
+  <Step title="Remove the DemoKraft AI badge">
+    On **Growth and Enterprise plans**, the DemoKraft AI badge is automatically removed from:
+
+    - The Hub video player footer
+    - Step-by-step doc pages
+    - All automated email footers
+
+    No manual action is required — upgrading to Growth or above removes the badge immediately across all your active sessions and playlists.
+  </Step>
+  <Step title="Embed sessions anywhere">
+    Every Hub session and playlist can be embedded directly in your website, product interface, CMS, or help centre.
+
+    1. Open any session or playlist in AI Hub.
+    2. Click **Share → Embed**.
+    3. Copy the embed code and paste it into your page.
+
+    The embedded player automatically uses your Brand Kit colours and logo if Brand Kit is configured.
+
+    ```html
+    <iframe
+      src="https://hub.demokraft.ai/session/YOUR_SESSION_ID"
+      width="100%"
+      height="600"
+      frameborder="0"
+      allowfullscreen
+    ></iframe>
+    ```
+
+    Replace `YOUR_SESSION_ID` with the actual session ID from the session's **Share** menu. The embed code supports responsive sizing (recommended — adapts to the container width), fixed pixel dimensions, autoplay (off by default — use with caution for accessibility), and a show/hide toggle for the player controls bar.
+  </Step>
+</Steps>
+
+<Tip>
+  Set your **Default Voice** in the Brand Kit at the same time as you configure your visual brand. Consistent voice and consistent visual branding together make every demo feel like a cohesive, professional product experience — not a patchwork of tools.
+</Tip>

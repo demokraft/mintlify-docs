@@ -1,0 +1,135 @@
+{
+  "$schema": "https://mintlify.com/docs.json",
+  "theme": "almond",
+  "name": "DemoKraft AI",
+  "description": "Kraft & Turn Product Content into Winning Deals! \nDemokraft AI empowers teams to turn product raw screen recordings or presentations into polished, studio-quality videos, guides and gifs in minutes.",
+  "colors": {
+    "primary": "#191b3b",
+    "light": "#ffffff",
+    "dark": "#191b3b"
+  },
+  "favicon": "https://media.brand.dev/89bec203-ab5a-4001-a3ec-44e8aff24143.jpg",
+  "icons": {
+    "library": "lucide"
+  },
+  "styling": {
+    "eyebrows": "breadcrumbs"
+  },
+  "contextual": {
+    "options": ["copy", "view", "assistant"]
+  },
+  "logo": {
+    "light": "/images/demokraftlogo-dark.png",
+    "dark": "/images/demokraftlogo-light.png",
+    "href": "https://www.demokraft.ai"
+  },
+  "navbar": {
+    "links": [
+      {
+        "label": "Support",
+        "href": "mailto:support@demokraft.ai"
+      }
+    ],
+    "primary": {
+      "type": "button",
+      "label": "Start Free Trial",
+      "href": "https://app.demokraft.ai/signup"
+    }
+  },
+  "navigation": {
+    "global": {
+      "anchors": [
+        {
+          "anchor": "Home",
+          "icon": "house",
+          "href": "https://www.demokraft.ai"
+        },
+        {
+          "anchor": "Website",
+          "icon": "globe",
+          "href": "https://demokraft.ai"
+        },
+        {
+          "anchor": "Support",
+          "icon": "life-buoy",
+          "href": "mailto:support@demokraft.ai"
+        }
+      ]
+    },
+    "tabs": [
+      {
+        "tab": "User Guide",
+        "groups": [
+          {
+            "group": "Get Started",
+            "pages": [
+              "introduction",
+              "getting-started/quickstart",
+              "getting-started/account-setup",
+              "getting-started/free-trial"
+            ]
+          },
+          {
+            "group": "AI Studio",
+            "pages": [
+              "ai-studio/overview",
+              "ai-studio/recording-and-upload",
+              "ai-studio/ai-script-enhancement",
+              "ai-studio/ai-voiceover",
+              "ai-studio/visual-effects",
+              "ai-studio/multilingual-support",
+              "ai-studio/templates",
+              "ai-studio/exporting-content"
+            ]
+          },
+          {
+            "group": "AI Hub",
+            "pages": [
+              "ai-hub/overview",
+              "ai-hub/sharing-modes",
+              "ai-hub/ai-demo-agent",
+              "ai-hub/lead-intelligence",
+              "ai-hub/access-control",
+              "ai-hub/custom-branding",
+              "ai-hub/analytics"
+            ]
+          },
+          {
+            "group": "Integrations",
+            "pages": [
+              "integrations/overview",
+              "integrations/hubspot",
+              "integrations/salesforce",
+              "integrations/slack",
+              "integrations/calendly",
+              "integrations/zapier"
+            ]
+          },
+          {
+            "group": "Account & Billing",
+            "pages": [
+              "account/plans-and-pricing",
+              "account/managing-seats",
+              "account/billing"
+            ]
+          }
+        ]
+      }
+    ]
+  },
+  "footer": {
+    "socials": {
+      "linkedin": "https://linkedin.com/company/demokraft-ai",
+      "youtube": "https://www.youtube.com/@demoKraft-AI"
+    }
+  },
+  "background": {
+    "color": {
+      "light": "#ffffff",
+      "dark": "#191b3b"
+    }
+  },
+  "appearance": {
+    "strict": true
+  }
+}

@@ -1,0 +1,116 @@
+---
+title: "Automate Lead Workflows with the Zapier Integration"
+sidebarTitle: Zapier
+description: "Use the Zapier integration to trigger workflows in any app when an AI Hub session completes — no code required. Supports five event triggers."
+---
+
+The Zapier integration connects DemoKraft AI to more than 5,000 apps without writing a single line of code. Use it to add leads to a nurture sequence, create tasks for your sales team, log sessions to a spreadsheet, or send personalised follow-up emails — all triggered automatically when an AI Hub session completes. Reach for Zapier when you need to connect DemoKraft AI to a tool that does not have a native integration, or when you want to build multi-step workflows across several apps at once.
+
+## Available triggers
+
+DemoKraft AI exposes five trigger events in Zapier. Each Zap listens for one event and fires its actions whenever that event occurs:
+
+- **Session Completed** — fires when any visitor finishes a session
+- **Hot Lead Completed Session** — fires only when the visitor's qualification score meets your configured hot lead threshold
+- **Meeting Booked** — fires when a Calendly booking is made inside a session
+- **Trial Started** — fires when a visitor clicks a trial CTA in a session
+- **New Lead Identified** — fires when a visitor provides their email for the first time
+
+## Available data fields
+
+Every trigger event passes the following fields to Zapier, which you can map to any field in your action app:
+
+- `visitor_email`
+- `visitor_name`
+- `visitor_company`
+- `qualification_score`
+- `session_name`
+- `content_watched`
+- `questions_asked`
+- `cta_outcome`
+- `meeting_date`
+- `lead_intelligence_url`
+
+## Setup
+
+<Steps>
+  <Step title="Generate your API key">
+    Go to **Settings → Integrations → Zapier** and click **Generate API Key**. Copy the key — you will need it to authenticate DemoKraft AI in Zapier.
+  </Step>
+  <Step title="Create a Zap in Zapier">
+    Log in to [zapier.com](https://zapier.com) and click **Create Zap**. Search for **DemoKraft AI** as the trigger app and authenticate using your API key when prompted.
+  </Step>
+  <Step title="Select your trigger event">
+    Choose the trigger event that matches when you want your Zap to fire — **Session Completed**, **Hot Lead Completed Session**, **Meeting Booked**, **Trial Started**, or **New Lead Identified**.
+  </Step>
+  <Step title="Map fields and finish your Zap">
+    Pull a test record to load the available DemoKraft AI fields, then map the fields you need to the inputs in your action app. Finish setting up the action, turn on your Zap, and it will run automatically for every matching session.
+  </Step>
+</Steps>
+
+## Example Zaps
+
+<AccordionGroup>
+  <Accordion title="Add to Brevo email nurture">
+    **Trigger:** Session Completed
+
+    **Action:** Brevo → Add Contact to List → enrol in your post-demo nurture sequence
+
+    Map `visitor_email`, `visitor_name`, `visitor_company`, and `qualification_score` to the Brevo contact fields. Use a Zapier filter step between trigger and action to only add contacts with a `qualification_score` above 50 if you want to exclude low-intent visitors from the sequence.
+  </Accordion>
+  <Accordion title="Create a Monday.com task for hot leads">
+    **Trigger:** Hot Lead Completed Session
+
+    **Action:** Monday.com → Create Item in your Sales board
+
+    Set the item name to a combination of `visitor_name` and `visitor_company`, map `qualification_score` to a number column, and pass `questions_asked` and `lead_intelligence_url` to a notes column so the responsible rep can prepare before reaching out.
+  </Accordion>
+  <Accordion title="Send a personalised Gmail follow-up">
+    **Trigger:** Session Completed
+
+    **Action:** Gmail → Send Email
+
+    Address the email to `visitor_email` and personalise the subject and body using `visitor_name`, `visitor_company`, and `content_watched`. Reference `questions_asked` to show you understood what they were exploring, and include `lead_intelligence_url` as a link for your own reference when they reply.
+  </Accordion>
+  <Accordion title="Log to Google Sheets pipeline tracker">
+    **Trigger:** Session Completed
+
+    **Action:** Google Sheets → Append Row
+
+    Map all available fields to columns in a shared tracking spreadsheet — Date, Name, Email, Company, Score, Content Watched, Questions Asked, CTA Outcome, and the Lead Intelligence URL. This gives your team a live pipeline tracker they can filter and share without needing access to DemoKraft AI directly.
+  </Accordion>
+</AccordionGroup>
+
+## Zapier vs native integrations
+
+Use this comparison to decide when to use Zapier and when to use a native integration:
+
+| | Zapier | Native (HubSpot / Salesforce) |
+|---|---|---|
+| **Setup time** | 5–15 minutes | 2–5 minutes |
+| **Data depth** | Selected fields only | Full profile sync |
+| **Two-way sync** | No | Yes (Salesforce Enterprise) |
+| **Best for** | Any app not natively supported | HubSpot and Salesforce users |
+
+<Info>
+  Use native integrations for your primary CRM — they sync the full Lead Intelligence profile and support two-way data flow. Use Zapier for additional tools and custom multi-step workflows.
+</Info>
+
+## Troubleshooting
+
+<AccordionGroup>
+  <Accordion title="Zap not triggering">
+    Verify that the API key entered in Zapier matches the key in **Settings → Integrations → Zapier**. If you have regenerated the key since setting up the Zap, update the Zapier authentication with the new key. Also confirm that the trigger event you selected actually fires for your session type — for example, the **Hot Lead Completed Session** trigger only fires when the score meets your threshold.
+  </Accordion>
+  <Accordion title="Missing fields in Zapier">
+    If you configured a new session or added new fields after creating the Zap, pull a fresh test record in Zapier to refresh the list of available fields. Zapier caches the field list from the test record used during Zap setup.
+  </Accordion>
+  <Accordion title="Field mapping errors">
+    Ensure you are mapping fields from the **DemoKraft AI trigger** step, not from a previous step's output. If you have filter or formatter steps between the trigger and the action, check that those intermediate steps are passing the DemoKraft AI fields through correctly.
+  </Accordion>
+  <Accordion title="Rate limits">
+    Zapier free plans have monthly task limits. If you are processing a high volume of sessions, you may hit your plan limit before the end of the month. Upgrade your Zapier plan to match your session volume, or use filters to restrict which sessions trigger the Zap — for example, only fire on sessions with a score above 60.
+  </Accordion>
+</AccordionGroup>
+
+Contact [support@demokraft.ai](mailto:support@demokraft.ai) for Zapier-specific integration issues.

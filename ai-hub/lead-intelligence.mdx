@@ -1,0 +1,61 @@
+---
+title: "Lead Intelligence: Know Every Buyer Before You Call"
+sidebarTitle: Lead Intelligence
+description: Each AI Hub session produces a structured buyer profile with qualification scores, engagement data, and Q&A logs so your team arrives informed.
+---
+
+Lead Intelligence is the structured buyer profile that DemoKraft AI generates for every visitor who completes an AI Demo Agent Guided Session. It replaces the cold first call with a fully briefed conversation: your sales rep already knows which features the prospect watched, which ones they skipped, what they asked the AI agent, how long they spent on each section, and whether their intent score puts them in hot, warm, or cool territory. You get a complete picture of a buyer's interest and readiness before a single human exchange takes place.
+
+## What each profile contains
+
+Every Lead Intelligence profile is built from six sections, each capturing a different dimension of the buyer's experience.
+
+| Profile section | What it includes |
+|---|---|
+| Visitor Identity | Email, name, company, IP-based location (city and country), device, and browser. Anonymous visitors are tracked by session ID and merged with their identity automatically once they provide an email — for example, by booking a meeting via Calendly. |
+| Qualification Data | Answers to every qualifying question the AI Demo Agent asked, plus a 0–100 intent score calculated from engagement depth, intent signals in the visitor's answers, and CTA completion. |
+| Content Engagement | Percentage of each video watched, segments the visitor re-watched, segments skipped, total time spent per content item, and a combined engagement score per chapter. |
+| Questions Asked | The full transcript of every question the visitor asked the AI agent during the session, with the agent's responses. This is one of the most valuable signals for your sales reps — it reveals exactly what the prospect is thinking. |
+| Session Timeline | A chronological log of every action the visitor took: opened session, watched video, paused, asked a question, re-watched a segment, clicked a CTA, and more. |
+| Outcome | The session's final action — meeting booked (with a link to the Calendly booking), trial started, external link clicked, or session abandoned (with the last recorded action before leaving). |
+
+## Where profiles appear
+
+Lead Intelligence profiles are available in every channel your sales team already works in — you do not need to log into AI Hub to act on them.
+
+- **AI Hub dashboard** — go to **AI Hub → Sessions**, click any session, then click any visitor name to open their full profile.
+- **HubSpot** — session data syncs to the contact record as a timeline event and as custom properties prefixed `dk_` (for example: `dk_qualification_score`, `dk_content_watched`, `dk_questions_asked`). See [HubSpot Integration](/integrations/hubspot) for setup.
+- **Salesforce** — session data appears as an Activity record linked to the Lead or Contact, with custom fields in the DemoKraft section. See [Salesforce Integration](/integrations/salesforce) for setup.
+- **Slack** — receive an instant notification with a profile summary and a deep link to the full report whenever a session meets your configured alert threshold. See [Slack Integration](/integrations/slack).
+- **Email alerts** — receive an email summary for high-intent sessions, delivered within seconds of the session completing.
+
+## Qualification score bands
+
+The intent score runs from 0 to 100 and is calculated from three signals: the intent indicators in the visitor's qualifying answers (for example, "purchasing within 30 days" scores higher than "just browsing"), engagement depth (content watched, questions asked, session duration), and CTA completion (meeting booked or trial started). Scores fall into four configurable bands:
+
+| Band | Default score range | Meaning |
+|---|---|---|
+| Hot | 75–100 | High intent, strong engagement — likely ready for a direct conversation |
+| Warm | 50–74 | Engaged but not yet fully qualified — nurture with a follow-up sequence |
+| Cool | 25–49 | Low engagement, early-stage browsing — add to marketing queue |
+| Cold | 0–24 | Minimal or no engagement — no immediate action required |
+
+<Note>
+  Adjust these thresholds to match your team's definition of a sales-ready lead. Go to **AI Hub → Settings → Lead Scoring** to configure the score ranges for each band. A score that works as "Hot" for an enterprise SaaS deal may be too high or too low for an SMB motion.
+</Note>
+
+## Data retention
+
+Lead Intelligence data is retained for the following periods based on your AI Hub plan:
+
+| Plan | Data retained |
+|---|---|
+| Starter | 90 days |
+| Growth | 12 months |
+| Enterprise | Custom |
+
+Visitor data is processed in accordance with GDPR and PDPA (Singapore). Each visitor is shown a data processing notice at the start of their session. Customise the notice text in **Hub Settings → Privacy**.
+
+<Tip>
+  Configure your qualification score band thresholds before your first session goes live. Align them with your SDR and AE team — a shared definition of what "Hot" means ensures the right leads reach the right people at the right speed.
+</Tip>

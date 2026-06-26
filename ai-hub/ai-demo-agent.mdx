@@ -1,0 +1,103 @@
+---
+title: "Configure the AI Demo Agent to Qualify Every Prospect"
+sidebarTitle: Demo Agent
+description: The AI Demo Agent greets every prospect, asks qualifying questions, routes them through personalised demo content, and scores their buying intent.
+---
+
+The AI Demo Agent is the engine behind every AI Demo Agent Guided Session — and the feature that separates DemoKraft AI from a video hosting platform. When a prospect opens your session link, the agent greets them by name, learns what they care about in under 60 seconds, routes them to the demo content built for someone exactly like them, and stays available throughout the session to answer questions. By the time your sales rep picks up the phone, the prospect has already had a full, personalised product experience — and your team already knows what they watched, what they asked, and how ready they are to buy.
+
+## Configure the AI Demo Agent
+
+<Steps>
+  <Step title="Set the agent persona">
+    Open your session in AI Hub and navigate to **Agent Settings**.
+
+    Configure three things that define how the agent appears to visitors:
+
+    - **Agent Name** — the name shown in the chat panel. Use something that feels natural for your brand — _"Alex from Acme"_, _"Your Demo Guide"_, or simply _"Acme Assistant"_.
+    - **Agent Introduction** — the first message the agent sends when a visitor opens the session. Keep it brief, warm, and purposeful. Example: _"Hi! I'm here to give you a personalised walkthrough of our platform. To show you the most relevant features first, I have two quick questions — it takes less than 60 seconds."_
+    - **Agent Avatar** — an icon or image displayed next to the agent's messages in the chat panel. Use your brand mark, a friendly illustration, or a photo of a team member.
+  </Step>
+  <Step title="Add qualifying questions">
+    Qualifying questions run at the start of the session, before content plays. The answers determine which content path the visitor sees.
+
+    To add a question, click **Add Question** in the **Qualifying Questions** panel, then:
+
+    1. Enter the question text.
+    2. Add answer options (for multiple-choice questions) or set the question to free-text.
+    3. Mark the question as **Required** or **Optional** — required questions must be answered before the session advances.
+
+    You can add up to **five qualifying questions** per session. Recommended examples for B2B SaaS demos:
+
+    - _"What is your role?"_ — Sales / Marketing / Customer Success / Product / Engineering / Other
+    - _"How large is your team?"_ — 1–10 / 11–50 / 51–200 / 200+
+    - _"What is your biggest challenge today?"_ — open text, or a shortlist of common pain points
+    - _"Are you evaluating solutions for immediate purchase?"_ — Within 30 days / Within 90 days / Researching / Just browsing
+  </Step>
+  <Step title="Configure content routing">
+    Content routing maps each qualifying answer to a specific content path — the ordered sequence of videos, docs, and GIFs that visitor will see.
+
+    In the **Routing** panel, each answer option for each qualifying question shows a **Set Content Path** button. Click it to assign a sequence.
+
+    Example routing logic:
+
+    | Answer | Content path |
+    |---|---|
+    | Role = Sales | Sales demo video → Lead qualification walkthrough → CRM integration guide |
+    | Role = Engineering | Technical deep-dive video → API overview → Security and data model |
+    | Team size = 200+ | Enterprise features overview → Access control walkthrough → SSO setup guide |
+
+    Visitors who give different answers see a completely different content sequence, even though they all opened the same session link.
+  </Step>
+  <Step title="Configure fallback behaviour">
+    Fallback behaviour determines what a visitor sees when no routing rule matches their answers — for example, if they selected "Other" in a role question that has no mapped content path, or if they skip all qualifying questions.
+
+    Set two things:
+
+    - **Default content path** — a general product overview that serves as the catch-all experience. Always configure this: it ensures every visitor sees something relevant instead of a blank screen.
+    - **Skip handling** — choose whether visitors who skip all qualifying questions go directly to the default path, or whether the agent prompts them once more before proceeding.
+  </Step>
+  <Step title="Set the knowledge base scope">
+    The AI agent answers visitor questions throughout the session, drawing on the knowledge base you configure here.
+
+    1. Go to **Agent Settings → Knowledge Base**.
+    2. Toggle on the content items the agent should use — your Hub videos, step-by-step docs, and GIFs.
+    3. Optionally add a **Custom FAQ** — a list of specific questions and answers that override or supplement the AI's responses. Use this for pricing questions, security and compliance questions, or common sales objections where accuracy is critical.
+
+    <Tip>
+      Add your product's FAQ page URL to the Custom FAQ section. The agent imports the content automatically and will answer those questions precisely as written.
+    </Tip>
+  </Step>
+</Steps>
+
+## What happens during a session
+
+Once your session is live, the AI Demo Agent runs the full experience end-to-end without any human involvement:
+
+1. **Welcome message** — the agent sends its introductory message and the first qualifying question as soon as the visitor opens the link.
+2. **Qualification flow** — the agent acknowledges each answer naturally and progresses to the next question, creating a conversational rather than form-like experience.
+3. **Content introduction** — once qualification is complete, the agent introduces the content path it has selected for that visitor and begins the demo.
+4. **In-session chat** — a chat panel remains visible throughout. Visitors can ask questions at any point — mid-video, between items, or at the end — and the agent responds from the configured knowledge base.
+5. **Closing CTA** — at the end of the session, the agent delivers a closing message configured by you, with a CTA action: book a meeting, start a free trial, contact sales, or a custom link.
+
+## Preview and test your session
+
+Before publishing, always run through the session yourself as a visitor.
+
+1. Click **Preview Session** in the session settings panel.
+2. Work through each qualifying answer combination to verify that routing rules send visitors to the correct content paths.
+3. Ask the agent questions your prospects are likely to ask and review its answers.
+4. Adjust the knowledge base or Custom FAQ entries if any answers are inaccurate or incomplete.
+
+## Review agent performance
+
+Open the **Analytics** panel and navigate to the **Agent Performance** section to see:
+
+- Questions answered versus questions skipped — a high skip rate on a specific question may mean it is unclear or asking for information prospects aren't ready to share.
+- Most common qualifying answers — helps you understand who your audience actually is, and whether your routing covers them well.
+- Most asked questions during sessions — reveals gaps in your demo content. If 40% of visitors ask the same question, add it to the Custom FAQ and consider surfacing the answer earlier in the content flow.
+- Visitor satisfaction ratings — a thumbs up/down rating shown after each agent response, giving you a direct signal on answer quality.
+
+<Tip>
+  Always configure a Fallback Behaviour before publishing. Visitors who skip qualifying questions or don't match any routing rule still get a relevant demo experience — and still generate a Lead Intelligence profile — instead of landing on a blank screen.
+</Tip>

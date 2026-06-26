@@ -1,0 +1,100 @@
+{
+  "projectType": "saas",
+  "projectName": "DemoKraft AI",
+  "projectDescription": "A B2B SaaS platform that transforms screen recordings into AI-narrated product demo videos, step-by-step docs, and GIFs — and deploys them as intelligent, 24/7 lead qualification experiences.",
+  "theme": "almond",
+  "primaryColor": "#f0a22a",
+  "lightColor": "#fae271",
+  "darkColor": "#f0484c",
+  "navigation": {
+    "tabs": [
+      {
+        "tab": "User Guide",
+        "groups": [
+          {
+            "group": "Get Started",
+            "pages": [
+              "introduction",
+              "getting-started/quickstart",
+              "getting-started/account-setup",
+              "getting-started/free-trial"
+            ]
+          },
+          {
+            "group": "AI Studio",
+            "pages": [
+              "ai-studio/overview",
+              "ai-studio/recording-and-upload",
+              "ai-studio/ai-script-enhancement",
+              "ai-studio/ai-voiceover",
+              "ai-studio/visual-effects",
+              "ai-studio/multilingual-support",
+              "ai-studio/templates",
+              "ai-studio/exporting-content"
+            ]
+          },
+          {
+            "group": "AI Hub",
+            "pages": [
+              "ai-hub/overview",
+              "ai-hub/sharing-modes",
+              "ai-hub/ai-demo-agent",
+              "ai-hub/lead-intelligence",
+              "ai-hub/access-control",
+              "ai-hub/custom-branding",
+              "ai-hub/analytics"
+            ]
+          },
+          {
+            "group": "Integrations",
+            "pages": [
+              "integrations/overview",
+              "integrations/hubspot",
+              "integrations/salesforce",
+              "integrations/slack",
+              "integrations/calendly",
+              "integrations/zapier"
+            ]
+          },
+          {
+            "group": "Account & Billing",
+            "pages": [
+              "account/plans-and-pricing",
+              "account/managing-seats",
+              "account/billing"
+            ]
+          }
+        ]
+      }
+    ]
+  },
+  "keyFeatures": [
+    "AI Script Enhancement — removes filler words, rewrites narration as clear benefit-driven copy",
+    "AI Voiceover — auto-synced professional voice in 39+ languages from a single recording",
+    "Visual Effects — 8 production-grade effects including Zoom & Blur, Spotlight, Arrows, Motion Scenes",
+    "Multilingual Support — translate and re-voice content into 39+ languages",
+    "Templates — launch-ready structures for product demos, onboarding, and sales content",
+    "Multi-Format Export — simultaneous Video (MP4), Step-by-Step Doc, and GIF from one project",
+    "AI Demo Agent — conversational qualifier that greets prospects, asks qualifying questions, and routes content",
+    "Three Sharing Modes — Static Playlist, Conversational Playlist, AI Demo Agent Guided Session",
+    "Lead Intelligence — structured buyer profiles with qualification scores (0–100), content engagement, and Q&A logs",
+    "Access Control — open, credential-based, and verified/whitelisted tiers",
+    "Custom Branding & Domain — white-label Hub on your own subdomain with full brand kit",
+    "CRM Integrations — native HubSpot and Salesforce sync with custom properties",
+    "Slack Alerts — real-time hot-lead and meeting-booked notifications",
+    "Calendly Integration — in-session meeting booking CTA synced to CRM",
+    "Zapier — 5,000+ app automation via session-completion triggers",
+    "Analytics Dashboard — session metrics, content engagement, audience intelligence, and revenue attribution"
+  ],
+  "publicApiSurface": [
+    "GET /sessions — list Hub sessions and lead intelligence data",
+    "Zapier triggers: Session Completed, Hot Lead Completed Session, Meeting Booked, Trial Started, New Lead Identified",
+    "Zapier fields: visitor_email, visitor_name, visitor_company, qualification_score, session_name, content_watched, questions_asked, cta_outcome, meeting_date, lead_intelligence_url",
+    "HubSpot custom properties: dk_qualification_score, dk_last_session_date, dk_content_watched, dk_questions_asked, dk_session_outcome",
+    "Salesforce custom fields: DemoKraft_Qualification_Score__c, DemoKraft_Last_Session_Date__c, DemoKraft_Session_Outcome__c, DemoKraft_Content_Watched__c, DemoKraft_Questions_Asked__c",
+    "Webhook payload — JSON on session completion (configurable events)",
+    "Embed <iframe> — responsive/fixed embed for Hub playlists and sessions",
+    "Custom Domain CNAME — cname.demokraft.ai with auto-provisioned SSL",
+    "Email sender customisation via SPF/DKIM DNS records"
+  ]
+}

@@ -1,0 +1,119 @@
+---
+title: "Measure Demo Engagement and Revenue Impact in AI Hub"
+sidebarTitle: Analytics
+description: The AI Hub analytics dashboard shows session metrics, content engagement, lead scores, audience intelligence, and revenue attribution in one view.
+---
+
+The AI Hub analytics dashboard does not show you view counts — it shows you pipeline intelligence. Every session your prospects watch generates a rich layer of behavioural data: which features held their attention, which sections made them stop and ask a question, which qualifying answers reveal buying intent, and whether any of that activity turned into a meeting or a closed deal. The dashboard brings all of this together in one place, filterable by date range and exportable in seconds, so your sales and marketing teams can act on what the data is telling them instead of guessing.
+
+Access the dashboard from the **Analytics** tab in AI Hub's left navigation.
+
+## Dashboard sections
+
+<Accordion title="Summary Metrics">
+  The top of the dashboard gives you workspace-level KPIs at a glance — your starting point for understanding overall Hub performance across all sessions and playlists in the selected date range.
+
+  | Metric | What it measures |
+  |---|---|
+  | Total sessions | Number of unique demo sessions started across all playlists and sessions |
+  | Avg. completion rate | Average percentage of content watched across all sessions |
+  | Qualified leads | Sessions with a qualification score at or above your Warm threshold (default: 50) |
+  | Hot leads | Sessions with a qualification score at or above your Hot threshold (default: 75) |
+  | Meetings booked | CTA completions via Calendly or other connected booking integrations |
+  | Trials started | CTA completions via your trial signup link |
+
+  Filter the summary by date range using the selector in the top-right corner: last 7 days, 30 days, 90 days, or a custom range.
+</Accordion>
+
+<Accordion title="Content Engagement">
+  Content engagement data shows you exactly how prospects interact with each video in your library — not just whether they watched it, but how deeply, where they stopped, and which moments were compelling enough to re-watch.
+
+  | Metric | What it tells you |
+  |---|---|
+  | Completion rate | Percentage of viewers who watched each video to the end |
+  | Average watch time | Mean seconds watched per viewer for each content item |
+  | Drop-off chart | A timeline showing exactly where viewers stopped watching — drop-off spikes identify weak points in your content that need revision |
+  | Re-watch segments | A timeline showing which segments viewers rewound and watched again — re-watch spikes identify the features and benefits that resonated most |
+  | Feature-level engagement | If chapters are configured on a video, completion rate and engagement score broken down per chapter |
+
+  Use drop-off data to identify weak points: if viewers consistently leave at the same moment, that section may be too long, unclear, or irrelevant to that audience. Use re-watch data to identify your strongest content — these are the moments to lead with in future demos.
+</Accordion>
+
+<Accordion title="Audience Intelligence">
+  Audience Intelligence aggregates data across all your visitors to reveal who your buyers actually are and what they are most curious about. This section is as useful for your marketing team as it is for sales.
+
+  | Metric | What it tells you |
+  |---|---|
+  | Top qualifying answers | How your visitors describe their role, team size, buying timeline, and intent — tells you whether your ICP assumptions match reality |
+  | Top questions asked | The questions visitors asked the AI agent most frequently — reveals objections, knowledge gaps, and what your demo needs to address earlier |
+  | Visitor companies | Companies whose employees viewed your content, identified by email domain where email was provided |
+  | Geographic distribution | Countries and cities your visitors are viewing from |
+  | Device and browser breakdown | Desktop / Mobile / Tablet split, plus browser data |
+
+  <Tip>
+    Check **Top questions asked** regularly and share it with your sales team. If 40% of prospects are asking the same question to the AI agent, that question needs to be addressed earlier and more prominently in your demo — and your AEs need to be ready to handle it confidently on calls.
+  </Tip>
+</Accordion>
+
+<Accordion title="Lead Pipeline">
+  The Lead Pipeline section is a filterable, sortable list of every lead generated through AI Hub. Use it to triage your pipeline, identify the highest-intent prospects, and confirm CRM sync status — all without leaving the analytics dashboard.
+
+  | Column | What it shows |
+  |---|---|
+  | Visitor | Name, email, and company where known — anonymous visitors show as their session ID |
+  | Date | When the session took place |
+  | Score | Qualification score from 0 to 100, colour-coded by band (Hot / Warm / Cool / Cold) |
+  | Watched | Percentage of the session's content the visitor watched |
+  | Questions | Number of questions the visitor asked the AI agent during the session |
+  | CTA | Whether the visitor completed a CTA action: Meeting Booked, Trial Started, or None |
+  | CRM | Sync status — Synced to HubSpot or Salesforce with a direct link to the record, or Not synced |
+
+  Click any row to open the full [Lead Intelligence](/ai-hub/lead-intelligence) profile for that visitor, including their complete session timeline, qualifying answers, Q&A transcript, and outcome.
+</Accordion>
+
+<Accordion title="Business Outcomes">
+  Business Outcomes connects your Hub activity to downstream revenue impact — the metric that justifies the investment to your leadership team.
+
+  | Metric | What it measures |
+  |---|---|
+  | Meetings booked from Hub | Calendly bookings where the prospect's first interaction with your brand was a Hub session |
+  | Trials started from Hub | Free trial signups attributed to a Hub session |
+  | Deals influenced | CRM deals where at least one contact on the deal had a Hub session recorded against their contact record |
+  | Revenue influenced | The combined value of all deals in the Deals Influenced list |
+
+  Attribution is tracked via UTM parameters and CRM contact matching. When a visitor's email matches a contact record in HubSpot or Salesforce, DemoKraft AI automatically links their Hub session to that contact's deals and opportunities.
+
+  <Warning>
+    Revenue attribution requires a connected HubSpot or Salesforce integration with opportunity tracking enabled. See [HubSpot Integration](/integrations/hubspot) or [Salesforce Integration](/integrations/salesforce) for setup instructions.
+  </Warning>
+</Accordion>
+
+## Export analytics data
+
+Download a full data export from any section of the analytics dashboard:
+
+1. Navigate to the section you want to export — Summary Metrics, Content Engagement, Audience Intelligence, Lead Pipeline, or Business Outcomes.
+2. Click **Export** in the top-right corner of that section.
+3. Choose your format: **CSV** or **Excel**.
+4. Select the date range.
+5. The file downloads immediately.
+
+Exports include all fields visible in the dashboard plus additional raw fields: session IDs, precise timestamps, and IP-based geolocation data.
+
+## Set up analytics alerts
+
+Alerts notify you or your team the moment a significant event occurs — no need to check the dashboard manually.
+
+1. Go to **Analytics → Alerts → New Alert**.
+2. Choose a trigger:
+   - Qualification score above a threshold (for example, score > 75)
+   - A specific company — identified by email domain — views your content
+   - A visitor books a meeting
+   - Completion rate on a specific video drops below a threshold
+3. Set the notification channel: **Email** (enter one or more email addresses) or **Slack** (select the channel — Slack integration must be configured, see [Slack Integration](/integrations/slack)).
+
+Alerts fire within seconds of the trigger condition being met.
+
+<Tip>
+  Set a Slack alert for Hot leads — qualification score above 75 — routed to your sales team's channel. Your SDRs and AEs will know within seconds when a high-intent prospect finishes a demo, giving them the opportunity to follow up while the session is still fresh in the prospect's mind.
+</Tip>

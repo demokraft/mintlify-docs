@@ -1,0 +1,89 @@
+---
+title: "Push AI Hub Lead Intelligence into Salesforce Leads"
+sidebarTitle: Salesforce
+description: "DemoKraft AI automatically creates Lead records and Activity logs in Salesforce with qualification scores and full session engagement data."
+---
+
+When you connect DemoKraft AI to Salesforce, every completed AI Hub session writes structured engagement data directly into your org — creating Lead or Contact records, logging Activity tasks, and populating five custom fields with qualification scores, content engagement, and session outcomes. Your sales team gets a prioritised, insight-rich pipeline without any manual data entry.
+
+## Prerequisites
+
+Before connecting, confirm the following:
+
+- You have **Salesforce System Administrator** access, or your profile has API access enabled and object-level permissions to create custom fields.
+- Your Salesforce edition is **Professional or above** — API access is required and is not available on Essentials plans.
+
+## What syncs
+
+DemoKraft AI writes data to Salesforce based on whether the visitor is new or already a known contact:
+
+- **New visitors** (email not matched to an existing record) → new **Lead** record
+- **Known contacts** (email matched to an existing Contact) → existing **Contact** record updated, plus a new **Activity (Task)** record logged
+
+**Custom fields auto-installed on first sync:**
+
+| Field | Object | Type |
+|---|---|---|
+| `DemoKraft_Qualification_Score__c` | Lead / Contact | Number |
+| `DemoKraft_Last_Session_Date__c` | Lead / Contact | Date/Time |
+| `DemoKraft_Session_Outcome__c` | Lead / Contact | Picklist (Meeting Booked / Trial Started / No Action) |
+| `DemoKraft_Content_Watched__c` | Lead / Contact | Long Text Area |
+| `DemoKraft_Questions_Asked__c` | Lead / Contact | Long Text Area |
+
+## Setup
+
+<Steps>
+  <Step title="Connect your Salesforce org">
+    Go to **Settings → Integrations → Salesforce** and click **Connect**. Choose your environment — **Production** or **Sandbox** — then complete the Salesforce OAuth flow. Salesforce System Administrator access is required to grant the permissions DemoKraft AI needs.
+  </Step>
+  <Step title="Let custom fields install automatically">
+    On the first session sync, DemoKraft AI installs the five custom fields listed above on both the Lead and Contact objects. No manual field creation is needed. To make them visible in record views, go to **Salesforce Setup → Object Manager → Lead → Page Layouts** and add the `DemoKraft_` fields to your layout.
+  </Step>
+  <Step title="Configure record creation rules">
+    Set how DemoKraft AI handles incoming session data:
+
+    | Setting | Options |
+    |---|---|
+    | **New visitors** | Create as Lead / Create as Contact / Do not create |
+    | **Contact matching** | Match by email / Match by email + company domain |
+    | **Lead assignment** | Unassigned / Assign to record owner / Use active lead assignment rules |
+
+    Choose **Create as Lead** for new visitors and **Match by email** for contact matching to get started quickly.
+  </Step>
+  <Step title="Enable opportunity tracking (optional, Enterprise)">
+    On Enterprise plans, enable opportunity tracking to attribute revenue to demo sessions. When a matched Contact has an open Opportunity, DemoKraft AI logs session data as an Activity on the Opportunity and adds `DemoKraft_Qualification_Score__c` as a custom field — enabling closed-deal attribution reporting in Salesforce.
+  </Step>
+</Steps>
+
+## Using the data in Salesforce
+
+<AccordionGroup>
+  <Accordion title="Lead scoring">
+    Use `DemoKraft_Qualification_Score__c` as a filter in Lead list views to surface your highest-intent prospects first. You can also feed this field into Salesforce's native Lead Scoring or Einstein Lead Scoring models to improve overall prioritisation across your pipeline.
+  </Accordion>
+  <Accordion title="Reports and dashboards">
+    Build a Salesforce report on the Lead or Contact object, filter for records where `DemoKraft_Last_Session_Date__c` is not blank, and group by `DemoKraft_Session_Outcome__c`. Add average `DemoKraft_Qualification_Score__c` as a metric to give your sales manager a real-time view of demo-influenced pipeline.
+  </Accordion>
+  <Accordion title="Workflow and Process Builder triggers">
+    Create a Salesforce Flow that triggers when `DemoKraft_Qualification_Score__c` is updated above your threshold. Use it to notify the account owner, change lead status to "Sales Accepted Lead", or add the record to a Salesforce Cadence for automated outreach.
+  </Accordion>
+</AccordionGroup>
+
+## Troubleshooting
+
+<AccordionGroup>
+  <Accordion title="API access error on connect">
+    Ensure the Salesforce user completing the OAuth flow has the **API Enabled** permission in their profile. If you are on Salesforce Essentials, upgrade to Professional or above — API access is not available on Essentials plans.
+  </Accordion>
+  <Accordion title="Lead records not created">
+    Check that your record creation rule is set to **Create as Lead** for new visitors. If it is set to **Do not create**, no Lead records will be generated. Also confirm that the session captured the visitor's email — anonymous sessions without an email address cannot create Salesforce records.
+  </Accordion>
+  <Accordion title="Custom fields not visible on layout">
+    Custom fields are installed automatically but are not added to page layouts. Go to **Salesforce Setup → Object Manager → Lead → Page Layouts** and drag the five `DemoKraft_` fields onto the layout. Repeat for the Contact object layout.
+  </Accordion>
+  <Accordion title="Duplicate leads">
+    Enable Salesforce's built-in Duplicate Management rules for the Lead object in **Salesforce Setup → Duplicate Management**. In DemoKraft AI, set your contact matching rule to **Match by email** before creating records to prevent duplicates from forming in the first place.
+  </Accordion>
+</AccordionGroup>
+
+Contact [support@demokraft.ai](mailto:support@demokraft.ai) for Salesforce-specific integration support.

@@ -1,0 +1,76 @@
+---
+title: "Sync AI Hub Lead Intelligence into HubSpot Contacts"
+sidebarTitle: HubSpot
+description: "DemoKraft AI syncs lead intelligence to HubSpot contacts automatically, creating timeline events and custom properties after every session."
+---
+
+Every time a visitor completes an AI Hub session, DemoKraft AI automatically creates or updates their HubSpot contact record — populating five custom properties with qualification data and appending a timeline event with a direct link back to the full Lead Intelligence profile. Your sales team gets full context on every lead without leaving HubSpot.
+
+## What syncs
+
+When a session completes, DemoKraft AI writes the following data to HubSpot:
+
+| Data | HubSpot field | Notes |
+|---|---|---|
+| Contact name, email, and company | Standard contact fields | Creates or updates the contact record |
+| Qualification score | `dk_qualification_score` | Number, 0–100 |
+| Last session date | `dk_last_session_date` | Date field |
+| Content watched | `dk_content_watched` | Multi-line text with titles and watch percentages |
+| Questions asked | `dk_questions_asked` | Multi-line text summary |
+| Session outcome | `dk_session_outcome` | Meeting Booked / Trial Started / No Action |
+| Timeline Event | Contact Timeline tab | Summary with a **View full session** link to DemoKraft AI |
+
+## Setup
+
+<Note>
+  You must have HubSpot Admin permissions to connect the integration via OAuth. If you see a permission error during setup, ask your HubSpot Admin to complete this step.
+</Note>
+
+<Steps>
+  <Step title="Connect your HubSpot account">
+    Go to **Settings → Integrations → HubSpot** and click **Connect**. You are redirected to HubSpot's OAuth screen — sign in and click **Allow access**. Once authorised, you are returned to DemoKraft AI and the connection is confirmed.
+  </Step>
+  <Step title="Choose your contact matching rule">
+    Select how DemoKraft AI handles the visitor's email when writing to HubSpot:
+
+    | Matching rule | Behaviour |
+    |---|---|
+    | **Email match** *(recommended)* | Matches by email and creates a new contact if no match exists |
+    | **Email match, no create** | Updates existing contacts only; never creates new records |
+
+    Choose **Email match** unless you want to restrict sync to contacts already in your CRM.
+  </Step>
+  <Step title="Save and let properties auto-create">
+    Click **Save**. On the next session completion, DemoKraft AI automatically creates the five `dk_` custom properties in HubSpot if they do not already exist. You can view them in **HubSpot → Contacts → Properties → DemoKraft AI**.
+  </Step>
+  <Step title="Set up a HubSpot workflow (optional)">
+    In HubSpot, go to **Automation → Workflows** and create a contact-based workflow. Set the enrolment trigger to _DemoKraft Qualification Score is greater than 75_, then add actions to assign the contact to a sales rep, enrol them in a follow-up sequence, or send an internal notification. This automates outreach for every hot lead DemoKraft AI identifies.
+  </Step>
+</Steps>
+
+## Viewing session data in HubSpot
+
+Open any contact record and click the **Timeline** tab. The DemoKraft AI session event shows the session name, date, qualification score, a summary of content watched, questions asked, and the CTA outcome. Click **View full session** to open the complete Lead Intelligence profile in DemoKraft AI.
+
+<Tip>
+  Add the five `dk_` properties to your HubSpot contact record view layout so your sales team can see qualification scores and session outcomes at a glance without opening the timeline. Go to **HubSpot → Contacts → Properties** and add each `dk_` property to the layout.
+</Tip>
+
+## Troubleshooting
+
+<AccordionGroup>
+  <Accordion title="Sessions not appearing on contact records">
+    Verify that the visitor's email was captured during the session and that it matches an existing HubSpot contact. If your matching rule is set to **Email match, no create**, sessions from visitors who are not already contacts will not create records. Switch to **Email match** if you want all sessions to sync.
+  </Accordion>
+  <Accordion title="Duplicate contacts created">
+    Switch your contact matching rule to **Email match, no create** to stop new contacts from being created for visitors who are not already in HubSpot. You can also enable email deduplication in **HubSpot → Settings → Data Management → Duplicates**.
+  </Accordion>
+  <Accordion title="Permission error during setup">
+    Ensure the HubSpot account used to complete the OAuth flow has Super Admin or custom CRM integration permissions. If you are not an Admin, ask your HubSpot Admin to connect the integration on your behalf.
+  </Accordion>
+  <Accordion title="Custom properties missing from contact layout">
+    The five `dk_` properties are created in HubSpot automatically on first sync, but they are not added to the contact record view layout automatically. Go to **HubSpot → Contacts → Properties**, search for each `dk_` property, and add them to the contact record view layout manually.
+  </Accordion>
+</AccordionGroup>
+
+For persistent issues, contact [support@demokraft.ai](mailto:support@demokraft.ai) with your HubSpot portal ID.
