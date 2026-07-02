@@ -79,7 +79,8 @@
               "ai-studio/visual-effects",
               "ai-studio/multilingual-support",
               "ai-studio/templates",
-              "ai-studio/exporting-content"
+              "ai-studio/exporting-content",
+              "ai-studio/test"
             ]
           },
           {
