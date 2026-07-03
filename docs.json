@@ -64,9 +64,9 @@
             "group": "Get Started",
             "pages": [
               "introduction",
-              "getting-started/quickstart",
-              "getting-started/account-setup",
-              "getting-started/free-trial"
+              "getting-started/gettingstarted",
+              "getting-started/free-trial",
+              "getting-started/support"
             ]
           },
           {
@@ -79,8 +79,8 @@
               "ai-studio/visual-effects",
               "ai-studio/multilingual-support",
               "ai-studio/templates",
-              "ai-studio/exporting-content",
-              "ai-studio/test"
+              "ai-studio/exporting-content"
+              
             ]
           },
           {

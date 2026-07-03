@@ -1,0 +1,19 @@
+{
+  "name": "demokraft-docs",
+  "version": "1.0.0",
+  "description": "DemoKraft AI Platform Documentation",
+  "scripts": {
+    "dev": "mint dev",
+    "build": "mint build",
+    "preview": "mint preview",
+    "deploy": "mint deploy"
+  },
+  "devDependencies": {},
+  "keywords": [
+    "demokraft",
+    "documentation",
+    "mintlify"
+  ],
+  "author": "DemoKraft AI",
+  "license": "MIT"
+}
