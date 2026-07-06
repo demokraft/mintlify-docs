@@ -54,34 +54,29 @@
             "group": "AI Studio",
             "pages": [
               "ai-studio/overview",
-              "ai-studio/recording-and-upload",
-              "ai-studio/ai-script-enhancement",
-              "ai-studio/ai-voiceover",
-              "ai-studio/visual-effects",
-              "ai-studio/multilingual-support",
-              "ai-studio/templates",
-              "ai-studio/exporting-content",
-              {
-                "group": "How-To",
-                "pages": [
-                  "ai-studio/background-image",
-                  "ai-studio/background-music",
-                  "ai-studio/script-enhance",
-                  "ai-studio/intro-scene",
-                  "ai-studio/effects-2",
-                  "ai-studio/captions",
-                  "ai-studio/effects-1",
-                  "ai-studio/how-objects",
-                  "ai-studio/how-templates",
-                  "ai-studio/generate-doc",
-                  "ai-studio/export"
-                ]
-              },
+              "ai-studio/background-image",
+              "ai-studio/background-music",
+              "ai-studio/script-enhance",
+              "ai-studio/effects-2",
+              "ai-studio/generate-doc",
+              "ai-studio/effects-1",
+              "ai-studio/how-objects",
+              "ai-studio/export",
+              "ai-studio/intro-scene",
+              "ai-studio/how-templates",
+              "ai-studio/captions",
               {
                 "group": "Config Details",
-                "pages": []
-              }
-              
+                "pages": [
+                  "ai-studio/exporting-content",
+                  "ai-studio/recording-and-upload",
+                  "ai-studio/ai-script-enhancement",
+                  "ai-studio/ai-voiceover",
+                  "ai-studio/templates",
+                  "ai-studio/multilingual-support"
+                ]
+              },
+              "ai-studio/visual-effects"
             ]
           },
           {
