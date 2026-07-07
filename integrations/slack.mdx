@@ -1,92 +1,32 @@
 ---
-title: "Get Real-Time Hot Lead Alerts in Slack from AI Hub"
+title: "Get Real-Time Hot Lead/Viewer Alerts in Slack from AI Hub"
 sidebarTitle: Slack
-description: "The Slack integration sends instant alerts to your sales channel when a hot lead completes a demo, books a meeting, or starts a trial."
+description: "The Slack integration sends instant alerts to your slack channel when a lead/viewer completes a session  or other events like CTA clicked."
 ---
 
-The DemoKraft AI Slack integration keeps your sales team informed the moment a high-intent event happens in an AI Hub session. Instead of checking dashboards or waiting for CRM updates, your team receives a structured alert card in the Slack channel of your choice — with the visitor's name, company, qualification score, content watched, questions asked, and direct links to their Lead Intelligence profile and CRM record.
+The DemoKraft AI Slack integration keeps your team informed the moment a high-intent event happens in an AI Hub session. Instead of checking dashboards or waiting for updates, your team receives a structured alert card in the Slack channel of your choice — with the visitor's name, company, qualification score(if applicable), and direct links to their Lead/Viewer Intelligence profile.
 
 ## What it sends
 
 The Slack bot posts an alert when any of the following events occur:
 
-- A session completion score exceeds your configured hot lead threshold (default: 75)
-- A visitor books a meeting via Calendly during a session
-- A visitor starts a free trial from a session CTA
-- A visitor from a tracked company domain completes a session
+- A session completion score (if applicable).
+- A visitor event like a CTA button clicked.
 
 ## Setup
 
 <Steps>
   <Step title="Connect Slack">
-    Go to **Settings → Integrations → Slack** and click **Connect**. Complete the OAuth flow and select the Slack workspace you want to connect. You are returned to DemoKraft AI once the connection is authorised.
+    Go to **Integrations → Slack** and click **Connect**. Complete the OAuth flow and select the Slack workspace you want to connect. Approve Demokraft AI Slack app access. You are returned to DemoKraft AI once the connection is authorised.
   </Step>
   <Step title="Select your notification channel">
-    In the Slack integration settings, click **Select Channel** and choose the channel where alerts should be posted — for example, `#sales-alerts` or `#hot-leads`. Click **Save**.
+    In the Slack integration settings, click **Select Channel** and choose the channel where alerts should be posted — for example, `#sales-alerts` or `#Training-Users`. Click **Save**.
 
-    <Note>
-      To post alerts to a private channel, invite the DemoKraft AI bot first. Open the channel in Slack and type `/invite @demoKraft AI`, then return to settings and select the channel.
-    </Note>
   </Step>
   <Step title="Configure your alert triggers">
-    Click **Configure Alerts** and set your preferences:
+    Click **Settings -> Notifications** and set your preferences in Notifications config.
 
-    | Alert | Default |
-    |---|---|
-    | Hot lead completed session (score ≥ threshold) | On — threshold: 75 |
-    | Meeting Booked | On |
-    | Trial Started | On |
-    | Company Domain Alert | Off — configure domains to enable |
-    | Session Completed (all sessions) | Off |
-
-    Adjust the hot lead score threshold to match your team's definition of a priority lead. Lower it to see more alerts; raise it to focus only on the highest-scoring sessions.
   </Step>
 </Steps>
 
-## What an alert looks like
 
-When a hot lead alert fires, Slack displays a card with a structured summary of the session:
-
-```
-🔥 Hot Lead — DemoKraft AI Hub
-Visitor: Sarah Chen (sarah@acmecorp.com)
-Company: Acme Corp | Score: 87/100
-Watched: Product Demo (94%), CRM Integration (78%)
-Asked: "Does this work with Salesforce Enterprise?"
-Outcome: Meeting booked — Jun 7, 2026 at 10:00am
-→ View full profile  →  Open in HubSpot
-```
-
-The alert includes direct links to the Lead Intelligence profile in DemoKraft AI and to the contact record in your connected CRM.
-
-## Per-session alert routing
-
-For account-based campaigns, you can route alerts for a specific session to a different Slack channel — for example, sending alerts directly to the account executive responsible for that account.
-
-To configure per-session routing:
-
-1. Open the AI Hub session.
-2. Go to **Session Settings → Alerts**.
-3. Select **Override channel** and choose the target Slack channel.
-4. Optionally, set a different score threshold for this session.
-
-<Tip>
-  Use per-session routing to send enterprise account alerts to a dedicated `#enterprise-alerts` channel and route SMB sessions to a separate channel — giving each team only the signals relevant to them.
-</Tip>
-
-## Troubleshooting
-
-<AccordionGroup>
-  <Accordion title="Bot is not posting alerts">
-    The most common cause is that the bot is not a member of the channel. For private channels, open the channel in Slack and type `/invite @demoKraft AI`. For public channels, check that the correct channel is selected in **Settings → Integrations → Slack**.
-  </Accordion>
-  <Accordion title="Channel not found when selecting in settings">
-    The channel must exist and the DemoKraft AI bot must be a member before it appears in the channel dropdown. Create the channel first, invite the bot, then return to settings to select it.
-  </Accordion>
-  <Accordion title="Alerts are missing for some sessions">
-    Check that the session's qualification score met your configured threshold. If a session scored below the threshold, no alert fires. Lower the threshold in **Configure Alerts** if you want to capture more sessions, or enable the **Session Completed** trigger to receive alerts for all sessions regardless of score.
-  </Accordion>
-  <Accordion title="Bot was removed from the channel">
-    Re-invite the bot to the channel using `/invite @demoKraft AI`. Confirm that alerts resume by running a test session. If the bot was removed from the workspace entirely, reconnect the integration via **Settings → Integrations → Slack → Reconnect**.
-  </Accordion>
-</AccordionGroup>

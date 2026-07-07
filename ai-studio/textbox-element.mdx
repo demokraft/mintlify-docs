@@ -1,0 +1,411 @@
+---
+title: "Textbox"
+description: "Add, style, and animate text over any part of your video in the Demokraft Studio editor."
+---
+
+Textbox is the animated text element in the Demokraft Studio editor. You can add it on top of any part of your video to display text — a title, a key stat, a call-to-action, a label, or any other copy — with animated entry and exit effects and visual styling like shadows, outlines, and color blends.
+
+Unlike basic captions (which follow the spoken word), Textbox clips are fully manual: you decide exactly what the text says, where it sits on screen, when it appears, how it moves in, and how it looks.
+
+**A Textbox clip is defined by six things:**
+
+| What | Controls |
+|---|---|
+| **Content** | The text you type |
+| **Timing** | When the clip starts and ends on the timeline |
+| **Style** | Font, size, color, alignment |
+| **Position & Size** | Where on screen, how wide, overall transparency |
+| **Effect** | Visual treatment applied to the text (shadow, outline, etc.) |
+| **Animation** | How the text enters (and optionally exits) the frame |
+
+---
+
+## Adding a Textbox
+
+<Steps>
+  <Step title="Open the Effects Panel">
+    In the Studio editor, open the **Effects** panel in the left sidebar.
+  </Step>
+  <Step title="Add the Element">
+    Click the **Textbox** icon (a rectangle with "T" inside).
+  </Step>
+  <Step title="Default Placement">
+    A default Textbox clip is placed at the current playhead position covering the full width of the video.
+  </Step>
+  <Step title="Configure">
+    The config panel opens on the right. Type your text, adjust the style, and click **Apply**.
+  </Step>
+</Steps>
+
+**Drag & resize on canvas:** You can drag the textbox to reposition it while playback is paused. Drag the left or right edge handle to adjust the width. Double-click the textbox on the canvas to edit the text inline without opening the panel.
+
+---
+
+## 1. Text
+
+The **Text** panel is where you type the words that will appear in the video.
+
+* Type or paste your text in the text area.
+* Use **Enter / Return** to add line breaks.
+* The canvas preview updates in real time as you type.
+
+<Tip>Keep the text short and punchy. Long sentences may wrap awkwardly at smaller font sizes or narrow widths.</Tip>
+
+---
+
+## 2. Timing
+
+| Field | What it does | Default |
+|---|---|---|
+| **Start (s)** | The second in the video when the textbox appears | Current playhead position |
+| **End (s)** | The second in the video when the textbox disappears | Start + 5 seconds |
+
+You can also drag the clip's edges in the timeline to adjust the timing visually.
+
+<Tip>The animation entry plays from the Start time. Make the clip duration ≥ Entry + Hold + Exit so the animation completes before the clip ends.</Tip>
+
+---
+
+## 3. Style
+
+The Style panel controls the typography: font, size, color, and fill.
+
+### Text Type Presets
+
+Click a preset to instantly apply a complete set of font settings tuned for that role:
+
+| Preset | Best use | Font size | Weight |
+|---|---|---|---|
+| **Title** | Main heading, hero text | 80px | Extra-bold (800) |
+| **Subtitle** | Supporting sentence below a title | 48px | Regular (400) |
+| **Label** | Short category tags, section names | 24px | Semi-bold (600) |
+| **Caption** | Small descriptive text, footnotes | 18px | Regular (400) |
+| **Label Subtitle** | Thin secondary label | 32px | Light (300) |
+| **Number** | Large stats, countdown values | 96px | Black (900), SpaceGrotesk font |
+| **Custom** | Start from scratch, no preset applied | 48px | Bold (700) |
+
+Selecting a preset updates Font size, Font weight, Letter spacing, and Line height all at once. Switching to "Custom" clears the preset selection so you can adjust everything manually.
+
+### Font Family
+
+Choose from 50+ fonts including:
+
+| Category | Example fonts |
+|---|---|
+| **Clean sans-serif** | Inter, DMSans, Outfit, Sora, Geist |
+| **Bold display** | Anton, BebasNeue, ArchivoBlack, Oswald |
+| **Rounded & friendly** | Nunito, Poppins, Raleway, Montserrat |
+| **Serif** | PlayfairDisplay, Merriweather |
+| **Handwriting** | Caveat, Pacifico |
+| **Technical / monospace** | JetBrainsMono, IBMPlexSans |
+| **Geometric** | SpaceGrotesk, PlusJakartaSans |
+
+Each font family in the list has its weight and italic variants directly available as separate entries (for example: `Poppins`, `PoppinsBold`, `PoppinsItalic`, `PoppinsBoldItalic`). Select the specific variant you want rather than using the weight or italic controls.
+
+<Note>**For non-Latin scripts** (Arabic, Hindi, Bengali, Japanese, Chinese, Korean, Thai, etc.), choose the matching **NotoSans** variant from the font list — these are specifically designed for correct rendering of those character sets.</Note>
+
+### Font Size
+
+Set the size in pixels. Range: **8 px to 300 px**. Default: **48 px**.
+
+The text automatically wraps inside the textbox width. If the font size is too large for the content to fit in one or two lines, reduce the size or widen the textbox.
+
+### Text Alignment
+
+| Option | Effect |
+|---|---|
+| **Left** | Text aligns to the left edge of the textbox |
+| **Center** | Text is centered horizontally (default) |
+| **Right** | Text aligns to the right edge |
+
+### Letter Spacing
+
+Adjusts the horizontal gap between characters. Range: **-10 to 30 px**. Default: **0**.
+
+* Negative values tighten the text (good for large display titles).
+* Positive values spread the text out (good for label / all-caps styles).
+
+### Line Height
+
+Adjusts the vertical gap between lines of wrapped text. Range: **0.8x to 2.5x**. Default: **1.2x**.
+
+* Tighter values (0.9–1.1) look good for large bold titles.
+* Looser values (1.4–2.0) improve readability for multi-line body text.
+
+### Fill
+
+The **Fill** control sets the color of the text itself.
+
+**Solid fill** — Pick a single color. Default: white (`#ffffff`).
+
+```json
+{
+  "style": {
+    "fillStyle": "solid",
+    "solidColor": "#ffffff"
+  }
+}
+
+```
+
+**Gradient fill** — The text is painted with a smooth blend from one color to another.
+
+| Field | What it does | Default |
+| --- | --- | --- |
+| **From** | Starting color of the gradient | `#fa8c16` (orange) |
+| **To** | Ending color of the gradient | `#ffffff` (white) |
+| **Angle** | Direction of the blend (0–360°, 0° = top-to-bottom, 90° = left-to-right) | 90° |
+
+```json
+{
+  "style": {
+    "fillStyle": "gradient",
+    "gradientColors": ["#fa8c16", "#ffffff"],
+    "gradientAngle": 90
+  }
+}
+
+```
+
+### Text Glow
+
+An optional soft halo radiated from each text character. Applies to **all effect types** (none, shadow, outline, background, blend). Enable via the **Text Glow** toggle in the Style panel.
+
+| Control | What it does | Range | Default |
+| --- | --- | --- | --- |
+| **Text Glow** | Enable/disable the glow. | — | off |
+| **Blur** | How far the glow spreads around each character. | 0–40 | 12 |
+| **Opacity** | Transparency of the glow. | 0–100% | 70% |
+| **Glow Color** | Color of the glow light. | Hex color | `#ffffff` |
+
+If **Text Shadow** (in the Background effect) and **Text Glow** are both enabled at the same time, the canvas preview shows only the shadow (canvas has a single-shadow API). The exported video also suppresses glow when text shadow is active, so the two render identically. Use one or the other for consistent results.
+
+---
+
+## 4. Position & Size
+
+| Control | What it does | Range | Default |
+| --- | --- | --- | --- |
+| **X (%)** | Horizontal position of the textbox's left edge, as a % of the video width | 0–100 | 10% |
+| **Y (%)** | Vertical position of the textbox's top edge, as a % of the video height | 0–100 | 40% |
+| **Width (%)** | How wide the text area is, as a % of the video width. Text wraps inside this width. | 5–100 | 80% |
+| **Opacity** | Overall transparency of the entire textbox (text + any effect). 0 = invisible, 1 = fully visible. | 0–1 | 1 |
+
+Keep X around 10% and Width around 80% to leave breathing room on both sides. For a centered single-word title, you can set X = 0 and Width = 100 with Center alignment.
+
+---
+
+## 5. Effect
+
+Effects change the visual treatment of the text — adding depth, contrast, or blending it into the video. There are six options.
+
+
+### None
+
+No effect applied. The text renders as plain colored text over the video.
+
+```json
+{ "effect": { "type": "none" } }
+
+```
+
+### Shadow
+
+Adds a drop shadow behind the text.
+
+| Control | What it does | Range | Default |
+| --- | --- | --- | --- |
+| **Blur** | How soft/spread out the shadow is. Higher = softer, more diffused. | 0–100 | 15 |
+| **Opacity** | How visible the shadow is. 0 = invisible shadow, 100 = fully opaque. | 0–100% | 20% |
+| **Distance** | How far the shadow is offset from the text. | 0–100 | 15 |
+| **Angle** | Direction of the offset (0–360°, measured clockwise from 12 o'clock). 135° = bottom-left. | 0–360° | 135° |
+| **Color** | Shadow color. Usually black for a natural shadow, but any color works for stylized looks. | Hex color | `#000000` |
+
+For a clean shadow, use a small distance (5–10), moderate blur (10–20), and low-to-medium opacity (20–40%). For a glow effect, set distance to 0 and increase blur significantly.
+
+### Outline
+
+Draws a solid border around each letter.
+
+| Control | What it does | Range | Default |
+| --- | --- | --- | --- |
+| **Thickness** | How thick the border is. | 0–100 | 20 |
+| **Color** | Border color. White outlines work well on dark videos; dark outlines on bright videos. | Hex color | `#ffffff` |
+
+Outline is great for ensuring readability on busy video backgrounds. Keep thickness between 8–20 for a natural look.
+
+### Background
+
+Draws a filled shape behind the text — a pill-shaped box (rounded rectangle) that acts as a backdrop. Optionally adds a border, a drop shadow behind the box, and a shadow cast by the text characters themselves.
+
+#### Fill
+
+| Control | What it does | Range | Default |
+| --- | --- | --- | --- |
+| **Fill Color** | Background box color. | Hex color | `#000000` |
+| **Fill Opacity** | How transparent the background box is. 100% = solid, 0% = invisible. | 0–100% | 60% |
+| **Padding** | Space between the text and the edge of the box. Larger = more breathing room. | 0–80 | 20 |
+| **Border Radius** | How rounded the corners of the box are. 0 = sharp corners, 50 = pill shape. | 0–50 | 8 |
+
+#### Border (optional)
+
+*Appears when Border Width > 0*
+
+| Control | What it does | Range | Default |
+| --- | --- | --- | --- |
+| **Border Width** | Thickness of the border drawn inside the box edge. 0 = no border. | 0–20 | 0 |
+| **Border Opacity** | Transparency of the border. 100% = solid. | 0–100% | 100% |
+| **Border Color** | Color of the border. | Hex color | `#ffffff` |
+
+#### Border Glow (optional)
+
+*Toggle on to reveal controls*
+
+| Control | What it does | Range | Default |
+| --- | --- | --- | --- |
+| **Border Glow** | Enable/disable a soft light radiating from the border edge. When **Frosted Glass Border** is also enabled the glow halos around the glass border (same outer edge). | — | off |
+| **Blur** | How wide the glow spreads in all directions. Higher = larger halo. | 0–40 | 10 |
+| **Opacity** | Transparency of the glow. | 0–100% | 80% |
+| **Glow Color** | Color of the glow light. | Hex color | `#ffffff` |
+
+#### Frosted Glass Fill (optional)
+
+*Toggle on to reveal controls*
+
+A stylistic glass-card look. When this toggle is on, the regular **Fill Color** and **Fill Opacity** controls are hidden — glass fill is mutually exclusive with solid fill. Rendered as a translucent tint plus a top-down sheen (lighter at the top, slightly darker at the bottom) that sells the "glass surface" effect.
+
+This is a stylistic look — it does NOT sample or blur the actual video behind the textbox (canvas/export render identically).
+
+| Control | What it does | Range | Default |
+| --- | --- | --- | --- |
+| **Frosted Glass Fill** | Enable/disable the glass fill. When on, replaces the solid Fill. | — | off |
+| **Opacity** | Translucency of the base tint. Higher = more visible glass. | 0–100% | 20% |
+| **Sheen** | Intensity of the top-bright + bottom-dark highlight gradient. 0 = flat tint, 100 = strong sheen. | 0–100% | 35% |
+| **Tint Color** | Color of the glass tint. White looks most "glassy"; tinted colors give a stained-glass feel. | Hex color | `#ffffff` |
+
+#### Frosted Glass Border (optional)
+
+*Toggle on to reveal controls*
+
+A stylistic translucent ring at the box rim with a thin inner highlight — looks like the rim of a glass card. Drawn **on top of** the regular Border (additive — both render together if both are enabled).
+
+**Important — interaction with Fill:** When Frosted Glass Border is enabled, the Fill (solid OR glass) is automatically inset by `Width` pixels so the rim stays transparent and the glass ring shows the video frame underneath (instead of blending with the fill color). Turn the toggle off to restore the full-size fill.
+
+| Control | What it does | Range | Default |
+| --- | --- | --- | --- |
+| **Frosted Glass Border** | Enable/disable the glass ring. Additive to the regular Border. | — | off |
+| **Width** | Thickness of the glass ring (px). | 1–20 | 4 |
+| **Opacity** | Translucency of the ring. The thin inner highlight scales with this value. | 0–100% | 70% |
+| **Tint Color** | Color of the glass ring. White matches typical glass; colored tints work for branded looks. | Hex color | `#ffffff` |
+
+#### Box Shadow (optional)
+
+*Toggle on to reveal controls*
+
+| Control | What it does | Range | Default |
+| --- | --- | --- | --- |
+| **Box Shadow** | Enable/disable a drop shadow behind the background box. | — | off |
+| **Blur** | How soft the box shadow is. Higher = more spread. | 0–40 | 15 |
+| **Opacity** | Transparency of the box shadow. | 0–100% | 50% |
+| **Distance** | How far the box shadow is offset from the box. | 0–40 | 10 |
+| **Angle** | Direction the box shadow is cast (degrees, clockwise from right). | 0–360° | 135° |
+| **Color** | Box shadow color. | Hex color | `#000000` |
+
+#### Text Shadow (optional)
+
+*Toggle on to reveal controls*
+
+| Control | What it does | Range | Default |
+| --- | --- | --- | --- |
+| **Text Shadow** | Enable/disable a shadow cast by the text characters. Layered above the box fill. | — | off |
+| **Blur** | How soft the text shadow is. | 0–40 | 10 |
+| **Opacity** | Transparency of the text shadow. | 0–100% | 40% |
+| **Distance** | How far the text shadow is offset from each character. | 0–40 | 8 |
+| **Angle** | Direction the text shadow is cast (degrees, clockwise from right). | 0–360° | 135° |
+| **Color** | Text shadow color. | Hex color | `#000000` |
+
+A semi-transparent background (40–65% opacity) is the most readable treatment for text over a moving video. Pair with center alignment and a bold font for maximum legibility. Enable Box Shadow to lift the card visually off the background. For a "premium UI" feel, try Frosted Glass Fill + Frosted Glass Border together — the glass tint at low opacity reads as a translucent panel and pairs naturally with light text.
+
+
+---
+
+## 6. Animation
+
+Animations control how the text enters (and optionally exits) the screen. The text is split into individual units — characters, words, or lines — and each unit animates in sequence with an auto-derived stagger delay.
+
+### Timing vs. Animation Phases
+
+| Controls | What it does |
+| --- | --- |
+| **Timing section (Start / End)** | When the textbox appears and disappears in the video. This is the **clip's visible window** and always takes precedence. |
+| **Entry / Hold / Exit (s)** | What happens *inside* that window — how the text animates in, how long it stays, and how it animates out. |
+
+**The Timing section wins.** If Entry + Hold + Exit exceeds the clip duration, the animation phases that fall outside the clip window are cut off. The text still disappears at the End time you set in Timing — the animation just won't complete. The Animation panel shows an orange warning when the sum exceeds the clip duration.
+
+**Best practice:** set Start/End first in the Timing section to define how long the textbox should be visible, then tune Entry + Hold + Exit to fit within that duration. Entry + Hold + Exit does not need to exactly equal the clip duration — any remaining time is absorbed as extra hold.
+
+### Phase Duration Fields
+
+| Field | What it does | Range | Default |
+| --- | --- | --- | --- |
+| **Entry (s)** | Total time for ALL units to finish entering | 0 – 30 | 40% of clip |
+| **Hold (s)** | Time the text is fully visible and static (0 = entry flows directly into exit) | 0 – 120 | 20% of clip |
+| **Exit (s)** | Total exit phase (0 = no exit) | 0 – 30 | 40% of clip |
+
+* Set **Entry = 0** to make text appear instantly (snap in) with no animation.
+* Set **Hold = 0** to transition directly from entry into exit with no pause in between.
+* Set **Exit = 0** to disable the exit phase (text holds until the clip ends).
+
+**Stagger:** within each phase the system automatically spaces unit animations using a 40/60 split — 40% of the phase time is spread as stagger delays, 60% is per-unit animation time. You never set stagger manually.
+
+### Animation Speed Guide
+
+| Feel | Entry (s) | Hold (s) | Exit (s) | Best for |
+| --- | --- | --- | --- | --- |
+| **Instant pop** | 0 | clip dur | 0 | Labels, callouts, quick captions |
+| **Snappy** | 0.3 | clip − 0.3 | 0 | Fast-paced content, product demos |
+| **Standard** | 40% | 20% | 40% | Auto-set when you pick an animation type |
+| **Smooth** | 1.2 | clip − 2.2 | 1.0 | Feature highlights, marketing |
+| **Dramatic** | 2.0 | clip − 3.5 | 1.5 | Hero titles, storytelling |
+| **Flash in/out** | 0.4 | 0 | 0.4 | Entry directly into exit, no pause |
+
+**Pro Tips for Speed:** * **Words/Lines:** Increase Entry to 1.5–2s to give all words time to stagger in fluidly.
+
+* **Characters:** For short words, 0.5s is snappy. For full sentences, use 1.0–1.5s to keep it readable.
+* **Count/Decode:** Entry is the full animation duration.
+* **Typewriter:** Entry controls the total typing time regardless of character count.
+
+### Animation Types
+
+---
+
+## Tips & Best Practices
+
+**Readability:**
+
+* Use the Background or Shadow effect if your video is visually busy — plain text over complex video can be hard to read.
+* White text on dark video needs no effect. Dark text on bright video benefits from a white outline or shadow.
+
+**Timing:**
+
+* Make your clip duration ≥ Entry + Hold + Exit. If the clip is shorter, the animation phase will be compressed. Check the Total readout in the Animation panel.
+* For entry animations on long text with word-split, increase Entry to 1.5–2 s so all words have time to enter before the hold begins.
+
+**Animation Choice:**
+
+* Titles: Drop, Scale, or Words
+* Data callouts: Count, Coded, Decode
+* Flowing multi-item text: Carousel
+* Subtle overlays: Fade, Ascend
+* Code / technical labels: Typewriter
+
+**Font Pairing:**
+
+* Title (large) + Caption (small) = a classic size hierarchy.
+* Use SpaceGrotesk or BebasNeue for big display numbers; Inter or Poppins for readable body text.
+* Avoid using very light fonts (weight 300) at small sizes on busy backgrounds — they disappear.
+
+**Export:**
+
+* The visual result in the canvas preview matches the exported video exactly — same fonts, same animation timing, same effects.
+* Textbox clips are rendered as a PNG image sequence on the backend and composited over your video at export time. Export time increases slightly with more Textbox clips.

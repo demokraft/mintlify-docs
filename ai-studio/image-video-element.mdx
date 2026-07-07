@@ -1,0 +1,108 @@
+---
+title: "Image & Video Element"
+sidebarTitle: "Image/Video Element"
+description: "Learn how to use image and video overlays on your video, including formatting rules, animations, and visual styles."
+---
+
+## Overview
+
+The **Image/Video** element places a media overlay on the video timeline. It supports:
+
+* **Static images** — JPG, JPEG, PNG (raster), SVG (vector, full transparency)
+* **Static with transparency** — WebP (static transparent images)
+* **Animated images** — GIF, APNG, animated WebP (loop within the element's time window)
+* **Video clips** — WebM (transparent via VP8/VP9 alpha), MP4 (opaque)
+
+The element can be positioned anywhere on the canvas, given a corner radius and drop shadow, and animated in/out independently of the media's own content animation.
+
+---
+
+## Supported Formats
+
+| Format | Extension | Transparency | Animated | Notes |
+| :--- | :--- | :--- | :--- | :--- |
+| **JPEG** | `.jpg`, `.jpeg` | ❌ | ❌ | Standard photo format |
+| **PNG** | `.png` | ✅ full alpha | ❌ | Best for screenshots with transparency |
+| **SVG** | `.svg` | ✅ full alpha | ❌ | Vector; rendered at element dimensions |
+| **WebP** | `.webp` | ✅ full alpha | ✅ / ❌ | Static or animated; all treated as potentially animated |
+| **GIF** | `.gif` | ⚠️ binary | ✅ | 1-bit transparency; loops in canvas and export |
+| **APNG** | `.apng` | ✅ full alpha | ✅ | Animated PNG with full transparency |
+| **WebM** | `.webm` | ✅ VP8/VP9 alpha | ✅ | Transparent video overlay |
+| **MP4** | `.mp4` | ❌ | ✅ | Opaque video overlay |
+
+<CardGroup cols={2}>
+  <Card title="Max Library Size" icon="folder-keep">
+    Up to **20 files** per project.
+  </Card>
+</CardGroup>
+
+---
+
+## Adding an Image/Video to Your Project
+
+<Steps>
+  <Step title="Open the Library">
+    In the **Effects** sidebar, click **Image/Video**.
+  </Step>
+  <Step title="Upload Your Asset">
+    In the library mode panel, click **Upload Image/Video** to upload a file from your device.
+  </Step>
+  <Step title="Select Your Thumbnail">
+    Click a thumbnail in the grid to select it.
+  </Step>
+  <Step title="Place on Canvas">
+    Click **Add to Video** — the element appears on the canvas at a default position.
+  </Step>
+  <Step title="Position and Resize">
+    Drag the element to your desired location and resize it using the corner handles.
+  </Step>
+  <Step title="Configure Styles">
+    Adjust timing, animation, and visual effects in the configuration panel, then click **Apply**.
+  </Step>
+</Steps>
+
+---
+
+## Format Guidance
+
+| Goal | Recommended format |
+| :--- | :--- |
+| Screenshot or diagram | **PNG** |
+| Logo with transparency | **SVG** or **PNG** |
+| Animated logo / sticker loop | **APNG** or **animated WebP** |
+| Animated product highlight | **GIF** (simple) or **APNG** (full alpha) |
+| Transparent video overlay | **WebM** (VP8/VP9 alpha) |
+| Video clip without transparency | **MP4** |
+| Large photo background | **JPEG** |
+
+<Tip>
+  **Pro-Tip:** Use **WebM** for transparent video overlays (e.g., an asset floating over the background). **MP4** does not support transparency; underlying videos will show through as a black rectangle.
+</Tip>
+
+---
+
+## Animation Effects
+
+Element-level animations control how the overlay **enters and exits** the canvas — independent of the media's own internal animation (GIF frames, video playback, etc.).
+
+| Animation | Static image | Animated/Video |
+| :--- | :--- | :--- |
+| **None** | ✅ | ✅ |
+| **Fade** | ✅ eased in/out | ✅ (linear easing in export) |
+| **Slide** | ✅ all directions | ✅ all directions |
+| **Scale** | ✅ 0% → 100% | ❌ disabled |
+| **Zoom** | ✅ 50% → 100% | ❌ disabled |
+| **Reveal** | ✅ left-to-right wipe | ❌ disabled |
+
+<Warning>
+  Scale, Zoom, and Reveal are disabled for animated/video formats.
+</Warning>
+
+---
+
+## Visual Effects
+
+| Effect | Description | All formats |
+| :--- | :--- | :--- |
+| **Corner radius** | Rounds the element corners. Value is measured in canvas pixels (1280×720 space). | ✅ |
+| **Drop shadow** | Adds a soft bottom-right shadow.  | ✅ |
