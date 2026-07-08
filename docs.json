@@ -54,60 +54,49 @@
             "group": "AI Studio",
             "pages": [
               "ai-studio/overview",
+              "ai-studio/screen-rec",
               "ai-studio/background-image",
               "ai-studio/background-music",
               "ai-studio/script-enhance",
+              "ai-studio/effects-1",
               "ai-studio/effects-2",
               "ai-studio/generate-doc",
-              "ai-studio/effects-1",
-              "ai-studio/how-objects",
-              "ai-studio/export",
               "ai-studio/intro-scene",
+              "ai-studio/how-objects",
               "ai-studio/how-templates",
               "ai-studio/captions",
-              {
-                "group": "Config Details",
-                "pages": [
-                  "ai-studio/exporting-content",
-                  "ai-studio/recording-and-upload",
-                  "ai-studio/ai-script-enhancement",
-                  "ai-studio/ai-voiceover",
-                  "ai-studio/templates",
-                  "ai-studio/multilingual-support"
-                ]
-              },
-              "ai-studio/visual-effects"
+              "ai-studio/export",
+              "ai-studio/translate",
+              "ai-studio/presentation",
+              "ai-studio/image-video-element",
+              "ai-studio/textbox-element"
+              
             ]
           },
           {
             "group": "AI Hub",
             "pages": [
               "ai-hub/overview",
+              "ai-hub/host-content",
               "ai-hub/sharing-modes",
-              "ai-hub/ai-demo-agent",
-              "ai-hub/lead-intelligence",
               "ai-hub/access-control",
-              "ai-hub/custom-branding",
-              "ai-hub/analytics"
+              "ai-hub/insights"
             ]
           },
           {
             "group": "Integrations",
             "pages": [
               "integrations/overview",
-              "integrations/hubspot",
-              "integrations/salesforce",
               "integrations/slack",
-              "integrations/calendly",
-              "integrations/zapier"
+              "integrations/email"
             ]
           },
           {
             "group": "Account & Billing",
             "pages": [
               "account/plans-and-pricing",
-              "account/managing-seats",
-              "account/billing"
+              "account/billing",
+              "account/troubleshoot"
             ]
           }
         ]

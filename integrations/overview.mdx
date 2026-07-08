@@ -1,10 +1,10 @@
 ---
-title: "Connect DemoKraft AI to Your Sales and Marketing Stack"
+title: "Connect DemoKraft AI to Your Tech Stack"
 sidebarTitle: Overview
-description: "DemoKraft AI integrates natively with HubSpot, Salesforce, Slack, Calendly, and 5,000+ apps via Zapier to sync lead intelligence automatically."
+description: "DemoKraft AI integrates with Tech stack tools."
 ---
 
-DemoKraft AI connects directly to the tools your sales and marketing teams already rely on. Every time a visitor completes an AI Hub session, lead intelligence flows automatically into your CRM, calendar, and communication tools — no manual data entry, no copy-paste, no dropped signals. Whether you use HubSpot, Salesforce, Slack, Calendly, or any of thousands of apps via Zapier, your pipeline stays current the moment a session ends.
+DemoKraft AI connects directly to the tools your teams already rely on. Every time a visitor completes an Hub session, user intelligence flows automatically into your tools.
 
 ## Native integrations
 
@@ -12,11 +12,12 @@ These integrations are built directly into DemoKraft AI and configured in **Sett
 
 | Integration | What it does |
 |---|---|
-| **HubSpot** | Syncs lead profiles, qualification scores, and session data to contacts and timeline events |
-| **Salesforce** | Pushes lead profiles and scores to Leads, Contacts, and Activities |
-| **Slack** | Sends real-time alerts for hot leads, session completions, and meeting bookings |
-| **Calendly** | Adds a meeting booking CTA inside sessions; bookings sync to your CRM |
-| **Zapier** | Triggers workflows in 5,000+ apps when a Hub session completes |
+| **Slack** | Sends real-time alerts for hot leads/viewers, session completions, and CTA clicked |
+| **Email** | Sends real-time emails for hot leads/viewers, session completions, and CTA clicked |
+| **HubSpot** (Coming Soon) | Syncs lead profiles, qualification scores, and session data to contacts and timeline events |
+| **Salesforce** (Coming Soon) | Pushes lead profiles and scores to Leads, Contacts, and Activities |
+| **Calendly** (Coming Soon) | Adds a meeting booking CTA inside sessions; bookings sync to your CRM |
+| **Zapier** (Coming Soon) | Triggers workflows in 5,000+ apps when a Hub session completes |
 
 ## How to connect any integration
 
@@ -30,7 +31,7 @@ Follow these steps to activate any integration in DemoKraft AI:
     Locate the integration you want to connect — use the search bar or browse by category.
   </Step>
   <Step title="Connect">
-    Click **Connect** and complete the authentication flow. HubSpot, Salesforce, and Slack use OAuth; Zapier and Calendly use an API key.
+    Click **Connect** and complete the authentication flow. Slack use OAuth;
   </Step>
   <Step title="Configure">
     Set your sync preferences — contact matching rules, notification channels, trigger conditions, or field mappings — depending on the integration.
@@ -45,66 +46,8 @@ Follow these steps to activate any integration in DemoKraft AI:
 When a visitor completes an AI Hub session, DemoKraft AI processes and routes data in this sequence:
 
 1. **Session ends** — the AI Hub session concludes and the visitor's engagement is recorded.
-2. **Lead profile created** — DemoKraft AI generates a Lead Intelligence profile with qualification score, content watched, and questions asked.
-3. **CRM record created or updated** — the profile is pushed to HubSpot or Salesforce as a new or updated contact, with a timeline event or activity logged.
-4. **Slack alert fires** — if the qualification score exceeds your configured threshold, a real-time alert is posted to your chosen Slack channel.
-5. **Calendly booking syncs** — if a meeting was booked during the session, it appears on the contact record in your CRM and in your Calendly calendar.
-6. **Zapier triggers fire** — any active Zaps listening to the matching trigger event run their configured actions in connected apps.
+2. **Lead/Visitor profile created** — DemoKraft AI generates a Lead/Visitor Intelligence profile with qualification score (if applicable), content watched, and questions asked.
+3. **Slack alert fires** — a real-time alert is posted to your chosen Slack channel.
+4. Support for more tool integrautions is coming soon. Support for custom tool can be planned as part of Enterprise plan.
 
-## Custom integrations via Webhooks
 
-For any tool not covered by a native integration or Zapier, configure a Webhook to receive session data directly. DemoKraft AI sends a structured JSON payload to your endpoint whenever a selected event occurs.
-
-**To set up a Webhook:**
-
-1. Go to **Settings → Integrations → Webhooks**.
-2. Click **Add Webhook**.
-3. Enter your endpoint URL.
-4. Select the events you want to receive.
-5. Click **Save**. DemoKraft AI will begin sending payloads to your endpoint immediately.
-
-**Configurable events:**
-
-- Session Completed
-- Hot Lead
-- Meeting Booked
-- Trial Started
-
-The full JSON schema is available in **Settings → Integrations → Webhooks → View Schema**.
-
-<Note>
-  Webhooks are available on all plans. The full JSON payload includes the complete Lead Intelligence profile for the session.
-</Note>
-
-## Enterprise integrations
-
-<Info>
-  Enterprise plan customers have access to additional integration support and pre-built assets. Contact [support@demokraft.ai](mailto:support@demokraft.ai) to discuss your requirements.
-</Info>
-
-Enterprise plans include:
-
-- **Managed Salesforce package** — a pre-installed, supported managed package with custom objects and dashboards
-- **Pre-built HubSpot workflow templates** — ready-to-use automation workflows for lead routing, sequences, and scoring
-- **SFTP data export** — scheduled bulk exports for data warehouse ingestion
-- **Dedicated integration support** — a DemoKraft AI integration specialist assists with setup and troubleshooting
-
-## Explore integrations
-
-<CardGroup cols={2}>
-  <Card title="HubSpot" icon="hubspot" href="/integrations/hubspot">
-    Sync lead intelligence to HubSpot contacts and timeline events automatically.
-  </Card>
-  <Card title="Salesforce" icon="salesforce" href="/integrations/salesforce">
-    Push qualification scores and session data to Salesforce Leads and Contacts.
-  </Card>
-  <Card title="Slack" icon="slack" href="/integrations/slack">
-    Receive real-time hot lead alerts in your sales Slack channel.
-  </Card>
-  <Card title="Calendly" icon="calendar" href="/integrations/calendly">
-    Embed a meeting booking CTA inside any AI Hub session.
-  </Card>
-  <Card title="Zapier" icon="bolt" href="/integrations/zapier">
-    Connect DemoKraft AI to 5,000+ apps without writing code.
-  </Card>
-</CardGroup>
