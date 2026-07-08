@@ -77,12 +77,10 @@
             "group": "AI Hub",
             "pages": [
               "ai-hub/overview",
+              "ai-hub/host-content",
               "ai-hub/sharing-modes",
-              "ai-hub/ai-demo-agent",
-              "ai-hub/lead-intelligence",
               "ai-hub/access-control",
-              "ai-hub/custom-branding",
-              "ai-hub/analytics"
+              "ai-hub/insights"
             ]
           },
           {
@@ -97,7 +95,8 @@
             "group": "Account & Billing",
             "pages": [
               "account/plans-and-pricing",
-              "account/billing"
+              "account/billing",
+              "account/troubleshoot"
             ]
           }
         ]
