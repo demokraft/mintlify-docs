@@ -81,7 +81,8 @@
               "ai-hub/playlist",
               "ai-hub/sharing-modes",
               "ai-hub/access-control",
-              "ai-hub/insights"
+              "ai-hub/insights",
+              "ai-hub/widget"
             ]
           },
           {
@@ -97,6 +98,7 @@
             "pages": [
               "account/plans-and-pricing",
               "account/billing",
+              "account/payment",
               "account/troubleshoot"
             ]
           }
