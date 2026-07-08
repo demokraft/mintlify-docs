@@ -1,10 +1,10 @@
 ---
-title: "Control Who Can Access Your AI Hub Sessions and Content"
-sidebarTitle: Access Control
-description: Set exactly who can view each Hub session, from open public links to email-verified whitelisted access for confidential or enterprise content.
+title: "Control Who Can Access Your AI Hub Playlist Sessions and Content"
+sidebarTitle: Playlist Access Control
+description: Set exactly who can access your Hub Playlist, from open public links to email-verified whitelisted access for confidential or enterprise content.
 ---
 
-Every piece of content you deploy through AI Hub does not need the same level of protection — a public-facing product demo and a confidential roadmap preview have very different audiences, and your access settings should reflect that. AI Hub gives you three access tiers that range from a fully open link anyone can click to email-verified, domain-whitelisted access you control down to the individual email address. You set the access level per session and per playlist, so each piece of content gets exactly the right amount of protection.
+Every piece of content you deploy through AI Hub does not need the same level of protection — a public-facing product demo and a confidential roadmap preview have very different audiences, and your access settings should reflect that. AI Hub gives you three access tiers that range from a fully open link anyone can click to email-verified, domain-whitelisted access you control down to the individual email address. You set the access level per per playlist, so each piece of content gets exactly the right amount of protection.
 
 <Tabs>
   <Tab title="Open Access">
@@ -17,86 +17,37 @@ Every piece of content you deploy through AI Hub does not need the same level of
     - Top-of-funnel outreach links sent via email or LinkedIn
     - Conference and event demo kiosk screens
 
-    **How to set Open Access:**
-
-    1. Open your playlist or session settings in AI Hub.
-    2. Under **Access Control**, select **Open**.
-    3. Publish and share the link freely.
-
-    <Note>
-      Open Access does not mean anonymous buyers. The AI Demo Agent can still capture visitor contact details voluntarily — by asking for an email during qualification, or via the closing CTA. You are not required to enforce authentication to collect identity.
-    </Note>
   </Tab>
 
   <Tab title="Credential-Based Access">
     ## Credential-Based Access
 
-    Viewers must authenticate before they can see any content. You control the credentials and can revoke access at any time — for individual viewers or for everyone at once.
+    Viewers must provide credentials before they can see any content. But the credentials are not verified.
 
     **Best for:**
     - Draft demos shared with specific prospects before a call
-    - Paid customer knowledge bases and onboarding portals
     - Partner portals with tiered content access
     - Beta or pre-launch content shared with selected accounts
 
-    **How to set Credential-Based Access:**
-
-    1. Under **Access Control**, select **Credential-Based**.
-    2. Choose your credential method:
-
-    | Method | How it works | When to use |
-    |---|---|---|
-    | Single shared password | All viewers use the same password to enter | Simplest setup — use for low-sensitivity content where speed matters more than individual tracking |
-    | Individual invite links | Each recipient gets a unique link; their identity is tracked from the moment they open it | Use when you need per-viewer analytics and the ability to revoke access individually |
-    | Email + password accounts | Viewers create a lightweight account with their email; you manage the approved email list | Use for ongoing portals — customer onboarding, partner enablement — where access management matters over time |
-
-    3. Save and publish. Share credentials separately from the link.
-
-    **Revoking access:**
-    - **Single password** — change the password in settings. All existing sessions are immediately invalidated.
-    - **Individual invite links** — revoke specific links from the **Viewers** panel. That viewer's link stops working instantly.
-    - **Email accounts** — deactivate individual accounts from the **Viewers** panel.
   </Tab>
 
   <Tab title="Verified / Whitelisted Access">
     ## Verified / Whitelisted Access
 
-    Viewers verify their identity via a one-time email passcode (OTP) before accessing any content. You control who qualifies by whitelisting specific email addresses or entire email domains. No password required — verification is instant for anyone on your whitelist.
+    Viewers verify their identity via a one-time email passcode (OTP) before accessing any content.
+    You control who qualifies by whitelisting specific email addresses or entire email domains. No password required — verification is instant for anyone on your whitelist.
 
     **Best for:**
     - Confidential product roadmaps shared with named enterprise accounts
     - Board-level and investor content (whitelist specific personal emails)
+    - Lead qualification with verified creds.
+    - Trainees/employees with verified email ids.
     - Sensitive internal content (whitelist your company domain)
     - High-value named account content for ABM campaigns
 
-    **How to set Verified / Whitelisted Access:**
-
-    1. Under **Access Control**, select **Verified / Whitelisted**.
-    2. Add whitelisted entries:
-       - **Entire domain** — for example, `acmecorp.com` grants access to any verified `@acmecorp.com` email address.
-       - **Specific email address** — for example, `cto@acmecorp.com` for named individuals.
-    3. Save and publish.
-
-    **What the viewer experiences:**
-    1. They open your link and are prompted to enter their email address.
-    2. They receive a one-time code to that email.
-    3. They enter the code. If their email or domain is whitelisted, they gain access immediately.
-    4. All session activity is attributed to their verified email from that point forward.
   </Tab>
 </Tabs>
 
-All three access tiers work fully with the AI Demo Agent. Verified / Whitelisted access provides the richest lead data because visitor identity is confirmed at the point of entry — every engagement signal in the session is attributed to a named, verified individual.
+All three access tiers work fully with the different sharing modes. Verified / Whitelisted access provides the richest lead data because visitor identity is confirmed at the point of entry — every engagement signal in the session is attributed to a named, verified individual.
 
-<Note>
-  Each session, playlist, and piece of content in your workspace can have a different access tier. You are not locked into one setting across the board — your public product demo can be Open while your customer onboarding portal is Credential-Based and your enterprise roadmap is Verified / Whitelisted, all running simultaneously in the same workspace.
-</Note>
 
-## Enterprise access control
-
-Enterprise plan customers have access to additional controls for environments where corporate security policies apply:
-
-- **SSO (SAML)** — viewers authenticate via your organisation's identity provider (Okta, Azure AD, Google Workspace). No separate credentials required; access is governed by your existing IAM policies.
-- **IP allowlists** — restrict access to specific IP ranges, such as your corporate network or VPN. Useful for internal tools and sensitive internal content.
-- **Audit log** — a full, exportable log of every access grant, access attempt, and access revocation, with timestamps and IP addresses for every event.
-
-Contact [support@demokraft.ai](mailto:support@demokraft.ai) to enable Enterprise access control features on your workspace.
