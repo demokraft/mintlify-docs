@@ -69,7 +69,7 @@ Whichever tab you use, the system extracts these key elements. Every item you su
 | **1** | **Product name** + one-line **tagline** | Opening and closing scenes, spoken and on screen |
 | **2** | **What it actually does** (in plain words) | The spine of the entire narrative |
 | **3** | **Who it's for** | The vocabulary and tone of every line of narration |
-| **4** | **The purpose of *this* video** | Which story gets told—an overview, a launch, or an intro |
+| **4** | **The purpose of *this* video** | Which story shape gets used—Explainer, How-To, Educational, Announcement, or Comparison. Say what kind of video it is and this is picked automatically; otherwise it falls back to the Video Type picker (see Section 7). |
 | **5** | **The problem** it removes | The opening beat; without it, the video starts flat |
 | **6** | **3–5 benefits** (outcomes, not features) | The middle scenes—roughly one core idea per scene |
 | **7** | **Proof: numbers, steps, quotes, integrations** | Unlocks high-value scene types (see Section 5) |
@@ -107,7 +107,7 @@ Product: <name> — "<one-line tagline>"
 
 What it is: <2-3 plain sentences. What it does, for whom, and how.>
 
-Purpose of this video: <what THIS video should announce or focus on>
+Purpose of this video: <what THIS video should announce or focus on—say if it's a how-to, comparison, announcement, etc.>
 
 Target audience: <who's watching, and how they should be spoken to>
 
@@ -219,14 +219,34 @@ Located next to the **Generate Video** button:
 
 ### 2. Video Type
 
-* **Intro:** Brand-first overview (Who we are, what we do, why it matters).
-* **Explainer:** The core workhorse (Problem → Solution → How it works → Outcome).
-* **Launch:** News-driven focus (What's new, why now, what it unlocks). *Specify what feature is launching in your prompt!*
+**Video Type is a fallback, not a hard switch.** If your prompt or description already says what kind of video this is—*"this is a how-to for our new export feature"*, *"a comparison against Competitor X"*—the system detects that automatically and uses it. The picker only decides when nothing was said. If it detects the wrong one, you can correct it during the story-direction review (Checkpoint A, see Section 10)—just pick the right option from the dropdown there and the story regenerates, no feedback text needed.
+
+| Type | Story shape | Best for |
+| :--- | :--- | :--- |
+| **Explainer** | Opens on the problem, shows your product solving it, closes with a clear next step. | A general product pitch or demo. |
+| **How-To** | States the goal, walks through the steps in order, ends on the result. No manufactured problem—just "here's how." | A tutorial or walkthrough of a feature/workflow. |
+| **Educational** | A hook or question, then a breakdown, then a takeaway. | Explaining a concept, or thought-leadership content. |
+| **Announcement / Update** | Leads with what's new, then the specifics, then why it matters—no pain-point opening. | Launching a feature or update to people who already know your product. |
+| **Comparison** | Built around the comparison itself as the throughline, not a footnote. | "Us vs. them" or "old way vs. new way" videos. |
 
 ### 3. Language
 
-* **Current Support:** English only.
-* **Upcoming:** Additional language support is coming soon.
+Both **Prompt a Studio** and **Prompt a Motion** generate natively in the language you pick—script, on-screen text, and narration are all produced in that language, and the voice list re-filters to match.
+
+<Info>
+  **Supported Languages (39 live, 2 coming soon)**
+
+  * **English**
+  * **Latin script:** French, Spanish, German, Italian, Portuguese, Dutch, Turkish, Polish, Swedish, Romanian, Czech, Croatian, Danish, Slovak, Finnish, Norwegian, Indonesian, Malay, Filipino, Vietnamese
+  * **Cyrillic + Greek:** Russian, Ukrainian, Bulgarian, Greek
+  * **Indic scripts:** Hindi, Marathi, Telugu, Tamil, Kannada, Gujarati, Bengali, Punjabi, Assamese, Malayalam
+  * **CJK + Thai:** Chinese, Japanese, Korean, Thai
+  * **Coming soon:** Arabic, Urdu
+</Info>
+
+<Note>
+  **Prompt a Motion:** the language is locked in once you click Generate—motion videos can't be translated after export, so choose carefully up front. **Prompt a Studio:** you can still translate the finished project into other languages afterward from the Studio editor's Translate feature.
+</Note>
 
 ---
 
@@ -256,7 +276,7 @@ Input Prompt ➔ [ Checkpoint A: Story Direction ] ➔ [ Checkpoint B: Full Stor
 
 ```
 
-* **Checkpoint A (Story Direction):** Review scene count and 1-line scene summaries. No visuals yet—this is the moment to fix *what the video is about*.
+* **Checkpoint A (Story Direction):** Review scene count and 1-line scene summaries. No visuals yet—this is the moment to fix *what the video is about*. The detected **Video Type** (see Section 7) is also shown here with a dropdown—if it's wrong, pick the right one and the story regenerates immediately, no feedback text required.
 * **Checkpoint B (Full Storyboard):** Review exact layout, visuals, on-screen copy, and voiceover text. Fix wording, imagery, and emphasis here.
 
 <Note>
@@ -264,6 +284,8 @@ Input Prompt ➔ [ Checkpoint A: Story Direction ] ➔ [ Checkpoint B: Full Stor
 </Note>
 
 ### Effective Feedback Examples
+
+Most of these apply at **Checkpoint B**, once scenes have images, wording, and backgrounds to react to. At **Checkpoint A**, keep feedback to structure and direction—which scenes exist, what order, what each one should focus on—since no visuals or exact copy exist yet.
 
 | ✅ Specific & Actionable | ❌ Vague & Ineffective |
 | --- | --- |
@@ -323,7 +345,7 @@ Before clicking **Generate Video**, verify your input:
 * [ ] Concrete problem statement clearly defined
 * [ ] 3–5 key benefits expressed as outcomes
 * [ ] At least one proof point added (a number with its unit, a sequence of steps, a quote, or named integrations)
-* [ ] Video purpose specified (especially for Launch videos)
+* [ ] Video purpose specified—say what kind of video it is (how-to, comparison, announcement, etc.) so the right Video Type is picked automatically
 * [ ] Target audience defined
 * [ ] 3-word CTA + URL included
 * [ ] Brand hex colors and font specified (if custom theme desired)
