@@ -61,6 +61,8 @@
               "ai-studio/script-enhance",
               "ai-studio/effects-1",
               "ai-studio/effects-2",
+              "ai-studio/seg-add-del",
+              "ai-studio/trim-split",
               "ai-studio/generate-doc",
               "ai-studio/intro-scene",
               "ai-studio/how-objects",
