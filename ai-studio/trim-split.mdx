@@ -1,0 +1,63 @@
+---
+title: "Using Segment trim and split"
+sidebarTitle: "Trim and split"
+description: "Learn how to divide and shorten video segments while managing scripts and voice-over output."
+---
+
+<iframe width="560" height="315" src="https://www.youtube.com/embed/McGBQJucQ1I?si=1aEf5RRbYZyY1f5B" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+
+## Overview
+
+Segment trim and Split work with videos created through extension-based recording, video uploads, and presentation-based recording.
+
+Select a segment, divide it into two with Split, or shorten it with Segment trim while reviewing scripts, durations, and Voice-over output.
+
+## Split a segment
+
+Select a segment, open the split configuration, choose the split point, and review the resulting segments and Voice-over.
+
+<Steps>
+  <Step title="Open the split configuration">
+    Select the segment you want to divide, then choose **Split Segment** from the segment controls or right-click the segment and choose **Split** from the pop-up menu. The split configuration opens.
+
+    <Frame>
+      <img src="https://storage.googleapis.com/dk-transcoder-assets/seller/dca5540c-3f1e-494a-950f-ef227365a8d7/studio/9a9c6979-4ffb-479f-be51-31c03c22dce3/video_screenshot_file/docv2_0.jpg" alt="Split segment controls" />
+    </Frame>
+  </Step>
+
+  <Step title="Choose the split point">
+    Adjust the slider to choose where the segment should split, then select **Apply**. The split point is set to the segment’s midpoint by default, and **Apply** divides the segment into two parts.
+
+    <Frame>
+      <img src="https://storage.googleapis.com/dk-transcoder-assets/seller/dca5540c-3f1e-494a-950f-ef227365a8d7/studio/9a9c6979-4ffb-479f-be51-31c03c22dce3/video_screenshot_file/1789541587173.png" alt="Adjust split position slider" />
+    </Frame>
+  </Step>
+
+  <Step title="Review segments and Voice-over">
+    Review the two segments in the Segment list and Script box, then edit the script and play the segments back. The script is automatically distributed according to each segment’s duration; if playback reveals Voice-over clipping or incomplete audio, regenerate the Voice-over. The split segments function like other project segments, their duration adjusts automatically when Voice-over is generated, and a segment with no script remains empty.
+  </Step>
+</Steps>
+
+## Trim a segment
+
+Use **Segment trim** to shorten a segment by setting its start and end points; you can also use **Split Segment** and **Trim Segment** with videos that have no Voice-over by adding scripts manually and generating a Voice-over for each segment.
+
+<Steps>
+  <Step title="Select the segment">
+    Select the segment you want to shorten in the **Segment list**. The selected segment is ready for trimming.
+  </Step>
+
+  <Step title="Open the trim configuration">
+    Select **Trim Segment** to open the trim configuration. The pop-up shows fields for the trim start and end points.
+  </Step>
+
+  <Step title="Set trim points and apply">
+    Set the trim start and end points, then select **Apply** to perform the **Trim**. The segment reflects its new duration, and the overall video duration updates automatically.
+
+    <Frame>
+      <img src="https://storage.googleapis.com/dk-transcoder-assets/seller/dca5540c-3f1e-494a-950f-ef227365a8d7/studio/9a9c6979-4ffb-479f-be51-31c03c22dce3/video_screenshot_file/docv2_4.jpg" alt="Trim segment dialog" />
+    </Frame>
+  </Step>
+</Steps>
+
+After applying **Trim**, follow the shared playback and Voice-over regeneration guidance in Split a segment, including when to regenerate the Voice-over and adjust the clip duration.
