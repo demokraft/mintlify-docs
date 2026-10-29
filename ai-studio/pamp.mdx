@@ -42,10 +42,10 @@ Prompt a Motion Premium creates product videos from a product description or an 
   <Step title="Configure video settings and generate">
     Configure the video settings, add assets, and select **Generate Video**:
     - Preview the style samples, then select a style. Nine styles are currently available, with more planned for future releases.
-    - Select a format: landscape, portrait, or square. Only landscape is currently available.
+    - Select a format: landscape (16:9), portrait (9:16), or square (1:1). See [Video formats](#video-formats).
     - Select English, Hindi, or Marathi as the language. More coming soon.
     - Set the duration and video type.
-    - Attach a **Brand kit** to apply your brand details throughout the video.
+    - Attach a **Brand kit** to apply your brand details throughout the video. See the [Brand Kit guide](https://docs.demokraft.ai/ai-studio/brand-kit).
     - Choose whether to include a voiceover and background music, then select from the available options. Turn off the voiceover to create a music-only video.
     - Use each style's default voice and music selections, or upload your own music file.
     - Add product screenshots or other assets that are not available on the website.
@@ -72,13 +72,29 @@ The **Prompt tab** lets you create a video without a website URL. Provide the pr
   </Step>
   <Step title="Add assets and brand colors">
     Attach relevant images and provide any required assets and brand colors:
-    - If a **Brand kit** is attached, it supplies the brand details instead.
+    - If a **Brand kit** is selected in the color palette, it supplies the brand details instead. Colors or a font you write in the prompt still take priority.
     - Alternatively, choose from the preset color combinations.
   </Step>
   <Step title="Apply fonts and remaining settings">
     Use the attached **Brand kit** for fonts and other brand details. Set the language and remaining settings from the options available.
   </Step>
 </Steps>
+
+## Video formats
+
+Every style can create videos in three formats:
+
+| Format | Best for |
+|---|---|
+| **Landscape (16:9)** | Websites, YouTube, presentations, product pages |
+| **Portrait (9:16)** | Instagram Reels, YouTube Shorts, TikTok, mobile stories |
+| **Square (1:1)** | LinkedIn and social feeds |
+
+- Choose the format before you select **Generate Video**. A format a style does not support appears greyed out.
+- **Studio Editor** shows a portrait or square video in its own shape, in normal and full-screen view.
+- By default, captions sit above the area that social apps cover with their controls on portrait videos, and inside the frame on square videos.
+- The export keeps the format. The resolution names the short side: in portrait, 1080p exports at 1080x1920; in square, at 1080x1080.
+
 
 ## Generate and approve the storyboard
 
@@ -91,6 +107,7 @@ Prompt a Motion Premium prepares a storyboard from your product description or W
   </Step>
   <Step title="Review the storyboard">
     Review the storyboard and provide feedback to regenerate it, or approve it when you are satisfied.
+    - The top of the storyboard confirms the style, format (landscape, portrait, or square), and length you chose.
   </Step>
   <Step title="Approve the storyboard">
     Approving the storyboard starts video generation.
@@ -136,5 +153,6 @@ Once the video is built, it opens in a new tab in **Studio Editor**. Use **Studi
     </Frame>
 
     - Depending on your subscription, choose 720p, 1080p, 2K, or 4K. You can also create an animated GIF.
+    - Portrait and square videos export in their own shape, GIFs included (see [Video formats](#video-formats)).
   </Step>
 </Steps>
