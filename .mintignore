@@ -8,3 +8,7 @@ drafts/
 
 # Repo tooling (image migration script and its manifest), not site content
 scripts/
+
+# Repo guidance and change log, not site content
+CLAUDE.md
+CHANGELOG.md
