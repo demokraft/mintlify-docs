@@ -26,6 +26,7 @@ Usage (from the repo root or anywhere):
 The run is idempotent: pages already migrated have no GCS references and are
 skipped, so it is safe to run on the whole repo after adding new docs.
 Every migrated image is recorded in scripts/gcs-image-manifest.csv.
+Full guide (workflow, error messages and fixes): scripts/localize-gcs-images-helpdoc.md
 """
 
 import argparse
