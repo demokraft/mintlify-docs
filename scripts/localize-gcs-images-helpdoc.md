@@ -43,7 +43,7 @@ Run these from `docs/mintlify-docs` (the script finds the repo root on its own, 
 
 ## What the script does
 
-- **Finds** GCS image links in every text file in the repo (skipping `.git`, `node_modules`, `scripts/` and `images/`). Two link forms are rewritten:
+- **Finds** GCS image links in every text file in the repo (skipping `.git`, `node_modules`, `scripts/`, `images/`, and the unpublished `CHANGELOG.md` and `CLAUDE.md` at the repo root). Two link forms are rewritten:
   - `<img src="URL" ... />` (single or double quotes)
   - `![alt](URL)`
 - **Downloads** each image once into `images/<page path>/<original file name>`. For example, `ai-studio/captions.mdx` gets `images/ai-studio/captions/frame_3.jpg`. Giving each page its own folder matters because studio file names (`frame_0.jpg`, …) repeat across projects.

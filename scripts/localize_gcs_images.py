@@ -48,6 +48,9 @@ MANIFEST = os.path.join(REPO_ROOT, "scripts", "gcs-image-manifest.csv")
 # Directories never scanned: tooling, dependencies, and the image store itself.
 # scripts/ is skipped because the manifest there deliberately lists the old URLs.
 SKIP_DIRS = {".git", "node_modules", "scripts", IMAGES_DIR}
+# Repo-root files never scanned: both are in .mintignore (never published), and
+# the changelog legitimately describes old GCS paths in prose.
+SKIP_FILES = {"CHANGELOG.md", "CLAUDE.md"}
 BINARY_EXTS = {".png", ".jpg", ".jpeg", ".gif", ".webp", ".avif", ".svg", ".ico",
                ".mp4", ".webm", ".mov", ".pdf", ".woff", ".woff2", ".ttf", ".otf", ".zip"}
 DOC_EXTS = {".mdx", ".md"}
@@ -81,6 +84,8 @@ def scan_files():
         dirs[:] = [d for d in dirs if d not in SKIP_DIRS]
         for name in files:
             if os.path.splitext(name)[1].lower() in BINARY_EXTS:
+                continue
+            if root == REPO_ROOT and name in SKIP_FILES:
                 continue
             path = os.path.join(root, name)
             with open(path, "rb") as f:
