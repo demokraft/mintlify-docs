@@ -2,6 +2,19 @@
 
 Datewise log of changes to this docs repo (`docs/mintlify-docs/`). Most recent first. See `CLAUDE.md` for the required entry format. Entries before 2026-11-01 name this file `docs/CHANGELOG.md` and `CLAUDE.md` as `docs/CLAUDE.md`, their location at the time.
 
+## 2026-11-04 — Doc templates user guide rewritten; images localized; script skips unpublished root files
+
+**Scope**: `ai-studio/doc-temp.mdx`, new `images/ai-studio/doc-temp/` (5 images), `docs.json` (navigation entry), `scripts/localize_gcs_images.py`, `scripts/localize-gcs-images-helpdoc.md`, `scripts/gcs-image-manifest.csv`.
+
+**Why**: the first draft of the Doc templates page (exported from the studio) covered the feature only at a high level and left out most of what users need to build a template: what a template can and cannot change, the five standard templates and when to use each, every setting in the editor, the three structure modes, the "whole script" switch, the save checks, the regeneration limit and what regenerating replaces. The fuller end-user text already existed in `studio/dk_ai_studio/helpdocs/doc-template-helpdoc.md`. The page also still linked its screenshots on GCS.
+
+**What changed**:
+- `ai-studio/doc-temp.mdx` — rewritten from the studio helpdoc in the site's style: overview with the rollout note and a "what a template does, and what it doesn't" list; a table of the five standard templates (best for / what you get) and how to View one; create-your-own as Steps with tables for About, Voice, Structure (Fixed / Guided / Topic) and Sections (heading placeholders, level, content shape, optional); the "Give the writer the whole script" section with its Steps restriction and the not-available tip; the checks the editor runs on save; tips for good templates; generating with the first-open picker; Regenerate with the two-per-project limit, the replace warning and the Product Doc fallback; copied and translated projects. Links to `/ai-studio/generate-doc` for editing the result. A duplicate Home screenshot (`_1`, identical to `_0`) and the reuse of the Product Doc screenshot in the save step were dropped.
+- `images/ai-studio/doc-temp/` — the page's 5 screenshots copied from GCS by the script; links rewritten to `/images/ai-studio/doc-temp/<file>`.
+- `docs.json` — `ai-studio/doc-temp` added to the AI Studio navigation after `generate-doc`.
+- `scripts/localize_gcs_images.py` — new `SKIP_FILES` (`CHANGELOG.md`, `CLAUDE.md` at the repo root): both are in `.mintignore`, and the changelog's 2026-11-01 entry describes the old GCS path in prose, which made the script stop on every run once the file moved into the repo. `scripts/localize-gcs-images-helpdoc.md` — the "what the script does" line names the skipped files.
+- `scripts/gcs-image-manifest.csv` — 5 rows added.
+
 ## 2026-11-01 — CLAUDE.md and CHANGELOG.md moved into the docs git repo
 
 **Scope**: `CLAUDE.md`, `CHANGELOG.md` (moved from `docs/` into `docs/mintlify-docs/`), `.mintignore`, `scripts/localize-gcs-images-helpdoc.md`.
