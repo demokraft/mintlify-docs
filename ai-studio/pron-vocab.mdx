@@ -30,7 +30,12 @@ Use **Pronunciation** in **Settings** to define how configured words are spoken 
   </Step>
 
   <Step title="Add words and phonetic pronunciations">
-    Add a word, enter its phonetic pronunciation, and choose the applicable language. For example, add “GIF”; select **Default** to apply its pronunciation across all languages. The configured list guides voice-over generation whenever those words appear in the script.
+    Select **Add Word**, enter the word and its phonetic spelling (how it sounds, for example "Dem-oh-Kraft"), then choose the language and the **Applicability**:
+
+    - **All languages** — use this pronunciation whatever language the voice-over is in.
+    - **This language only** — use it only for voice-overs in the selected language.
+
+    You can add several rows for one word, for example an **All languages** row plus a French-only row. A **This language only** row always wins for its language. The pronunciation list changes only what the AI voice says, never the text on screen.
 
     <Frame>
       <img src="/images/ai-studio/pron-vocab/docv2_1.jpg" alt="Adding a phonetic pronunciation rule" />
@@ -40,7 +45,7 @@ Use **Pronunciation** in **Settings** to define how configured words are spoken 
   </Step>
 
   <Step title="Preview the pronunciation">
-    Select the **Speaker Preview icon** to hear how the configured words sound. This lets you check the result and maintain consistent control over pronunciation.
+    Each row has two speaker icons: one plays the word as typed (the mispronunciation you are fixing), the other plays your phonetic spelling. Use them to fine-tune the spelling before you rely on it. The language filter above the table shows the rows for one language.
   </Step>
 </Steps>
 
@@ -69,3 +74,14 @@ Vocabulary controls how specific words are spelled in generated scripts and docu
 <Frame>
   <img src="/images/ai-studio/pron-vocab/docv2_10.jpg" alt="Vocabulary terms applied in generated content" />
 </Frame>
+
+## Good to know
+
+- **Use both lists for one word if needed.** Vocabulary fixes spelling, Pronunciation fixes sound; one does not fix the other.
+- **Applies to every project.** Both lists work for recorded, uploaded, presentation, template, and prompt-generated projects, and for Translate. There is nothing to set per project.
+- **Limits:** up to 50 words in the Vocabulary list and up to 50 rows in the Pronunciation list. A word with rows in three languages counts as three rows.
+- **New content only.** A change applies to scripts, documents, and voice-overs you generate afterwards. To fix an existing project, run script enhancement or AI voice-over on it again.
+
+<Tip>
+  Still mispronounced? Check that the row's language matches the language of the voice-over. A French-only row does nothing for an English voice-over.
+</Tip>

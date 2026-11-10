@@ -2,6 +2,27 @@
 
 Datewise log of changes to this docs repo (`docs/mintlify-docs/`). Most recent first. See `CLAUDE.md` for the required entry format. Entries before 2026-11-01 name this file `docs/CHANGELOG.md` and `CLAUDE.md` as `docs/CLAUDE.md`, their location at the time.
 
+## 2026-11-10 — Introduction and Studio overview cover PAMP, Brand Kit, Presets, Pronunciation & Vocabulary, Doc templates; feature pages synced with the studio helpdocs
+
+**Scope**: `introduction.mdx`, `ai-studio/overview.mdx`, `ai-studio/pamp.mdx`, `ai-studio/preset.mdx`, `ai-studio/pron-vocab.mdx`.
+
+**Why**: the introduction did not mention Prompt a Motion Premium, Brand Kit, Presets, Pronunciation & Vocabulary or Doc templates, and the Studio overview lacked PAMP, Brand Kit and Doc templates. Comparing the feature pages with `studio/dk_ai_studio/helpdocs/` (PAMP, preset, vocabulary-pronunciation) and the web_seller UI found wrong or missing facts. Two stale helpdoc lines were fixed in the studio repo at the same time: see `studio/dk_ai_studio/changelog.md` 2026-11-10.
+
+**What changed**:
+- `introduction.mdx` — Prompt a Motion Premium added as a way to start (and premium motion-graphics videos to the Create list); new section "Set It Up Once. Stay On-Brand Everywhere." with Brand Kit, Presets, Pronunciation & Vocabulary and Doc Templates, each linking to its guide; the documents bullet names doc templates.
+- `ai-studio/overview.mdx` — cards for Prompt a Motion Premium, Brand Kit and Doc templates; the prompting tip names PAMP; the Presets card names the project types it applies to; translation count 40 → 41 (the language table on `ai-studio/translate` lists 41); the docs card no longer states a count.
+- `ai-studio/pron-vocab.mdx` — the applicability step names the real options (**All languages** / **This language only**; the page said "Default"), multiple rows per word, the two preview icons and the language filter; new "Good to know" section (spelling vs sound, applies to every project type and Translate, 50-entry limits, changes apply to new content only) and a mispronunciation tip.
+- `ai-studio/preset.mdx` — note that presets are not available for template or prompt-generated projects; each operation is independent (a voice-over without Script enhancement, captions without a voice-over; Rule 6 as amended 2026-11-10, see `studio/dk_ai_studio/changelog.md`); closing the tab, the busy project and partial failure while applying.
+- `ai-studio/pamp.mdx` — the duration choices (the style sets the video type, so "video type" was removed), up to five images, voiceover and music cannot both be off, up to three storyboard feedback rounds, closing the page while it runs, editor Feedback as a written change (the music level and track controls are hidden in the app), the first export taking a few minutes, and a note listing the editor panels a PAMP video does not offer.
+
+## 2026-11-09 — AI Voiceover: Speed control named in the voice step
+
+**Scope**: `ai-studio/ai-voiceover.mdx`.
+
+**Why**: the studio now applies the chosen speed for ElevenLabs voices in every language of recorded and template projects (before, voices in 13 languages ignored it); see `studio/dk_ai_studio/changelog.md` 2026-11-09 and `studio/dk_ai_studio/plan_docs/elevenlabs-v4-plan.md`.
+
+**What changed**: the "Select a voice" step names the **Speed** control and says it is greyed out for the few voices that only speak at their natural pace.
+
 ## 2026-11-04 — Doc templates user guide rewritten; images localized; script skips unpublished root files
 
 **Scope**: `ai-studio/doc-temp.mdx`, new `images/ai-studio/doc-temp/` (5 images), `docs.json` (navigation entry), `scripts/localize_gcs_images.py`, `scripts/localize-gcs-images-helpdoc.md`, `scripts/gcs-image-manifest.csv`.
