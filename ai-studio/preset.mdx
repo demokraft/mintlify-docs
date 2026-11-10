@@ -14,6 +14,10 @@ Preset Config in Demokraft combines multiple video polishing operations into one
 
 You can include Background image, Music, Script enhancement, AI voice-over, and Captions in a preset instead of configuring each operation separately.
 
+<Note>
+  Presets are not available for projects created from a template, Prompt a Studio, Prompt a Motion, or Prompt a Motion Premium.
+</Note>
+
 Configure presets, apply them to projects with **Apply**, and review the processed video.
 
 ## Create and manage presets
@@ -45,6 +49,8 @@ Use Preset Configs to combine video polishing operations into reusable presets w
 
     Finally save the preset. Once saved, it becomes available in your video project.
 
+    Each operation is independent. For example, a preset can generate an AI voice-over from your current script without Script enhancement, or add Captions without an AI voice-over. Captions follow the spoken audio, so for a presentation, which has no audio of its own, they appear only once it has an AI voice-over.
+
     <Frame>
       <img src="/images/ai-studio/preset/docv2_6.jpg" alt="Configure Preset Operations" />
     </Frame>
@@ -70,6 +76,10 @@ Use the Presets panel to choose a preset, apply its configured operations, and v
 
   <Step title="Apply the preset">
     Select **Apply**. Review the confirmation warning that existing configurations may be overridden, then confirm to start processing. Demokraft processes each configured operation in sequence, and the progress can be monitored as the workflow runs.
+
+    - You can close the tab; processing continues and the progress shows again when you come back.
+    - While a preset is applying, you cannot start another operation on the project.
+    - If a step fails, the steps already completed are kept and the remaining steps are skipped. The summary shows what was applied and what was not.
 
     <Frame>
       <img src="/images/ai-studio/preset/docv2_10.jpg" alt="Apply Preset Confirmation" />
