@@ -2,6 +2,19 @@
 
 Datewise log of changes to this docs repo (`docs/mintlify-docs/`). Most recent first. See `CLAUDE.md` for the required entry format. Entries before 2026-11-01 name this file `docs/CHANGELOG.md` and `CLAUDE.md` as `docs/CLAUDE.md`, their location at the time.
 
+## 2026-11-13 — Presets guide covers intro and outro scenes; Intro/Outro Scene Options page covers all 24 templates, Brand Kit, logo and fonts
+
+**Scope**: `ai-studio/preset.mdx`, `ai-studio/intro-scene.mdx`, `introduction.mdx`, `ai-studio/overview.mdx`.
+
+**Why**: presets gained Intro scene and Outro scene steps, a "will not be applied to this project" list before applying, and a clearer result summary (in prod 2026-11-12 and 2026-11-13), and the scenes feature grew from the classic templates to 24 templates with Brand Kit, logo, body font and script-aware fonts. Both pages still described the earlier state. Compared with `studio/dk_ai_studio/helpdocs/preset-config-helpdoc.md` and `helpdocs/studio/intro-outro-scenes-helpdoc.md`. See `studio/dk_ai_studio/changelog.md` and `web_seller/changelog.md` entries of 2026-11-11 to 2026-11-13.
+
+**What changed**:
+- `ai-studio/preset.mdx` — Intro scene and Outro scene named as steps; collapsed step cards and the Settings button; new section "Add an intro and an outro" (only what is specific to presets: the two steps, the intro title filled from the project name, scenes run first; every scene setting links to `ai-studio/intro-scene`, the single source, owner); the apply step says an existing intro or outro is replaced (an intro or outro added in the middle is left alone) and lists what will not be applied (voice-over, deleted logo, unavailable font); result summary states named; new Troubleshooting section.
+- `ai-studio/intro-scene.mdx` — what scenes are; one table of all 24 templates by type (intro, chapter break, outro) with a short look note for Spotlight, Aurora, Kinetic, Frame and Mosaic (no old/new split, owner); common settings, Body Font, required fields per template, text in other languages; Brand kit and Logo sections; intro title starts as the project name; durations no longer stated as a fixed 3 seconds (the range depends on the template); "rendered once", change or remove, Presets and Translation sections; list formatting and "sceen" typo fixed.
+- `introduction.mdx`, `ai-studio/overview.mdx` — the Presets text names the intro and outro scene.
+
+**Not done**: no new screenshots. The existing images show the earlier UI (no Intro/Outro cards in the preset editor, no Spotlight / Aurora / Kinetic / Frame / Mosaic templates, Brand kit selector or Logo field); new ones are needed to match.
+
 ## 2026-11-10 — Introduction and Studio overview cover PAMP, Brand Kit, Presets, Pronunciation & Vocabulary, Doc templates; feature pages synced with the studio helpdocs
 
 **Scope**: `introduction.mdx`, `ai-studio/overview.mdx`, `ai-studio/pamp.mdx`, `ai-studio/preset.mdx`, `ai-studio/pron-vocab.mdx`.
