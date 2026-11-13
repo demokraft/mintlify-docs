@@ -12,7 +12,9 @@ description: "A guide to creating, managing, and applying preset configurations 
 
 Preset Config in Demokraft combines multiple video polishing operations into one reusable action for Studio projects created through **extension recording, video uploads, or presentation uploads**.
 
-You can include Background image, Music, Script enhancement, AI voice-over, and Captions in a preset instead of configuring each operation separately.
+You can include an Intro scene, an Outro scene, Background image, Music, Script enhancement, AI voice-over, and Captions in a preset instead of configuring each operation separately.
+
+A preset can open and close every video with your own intro and outro scenes. Their settings are the same as in the Scenes panel, described in [Intro, outro and chapter scenes](/ai-studio/intro-scene).
 
 <Note>
   Presets are not available for projects created from a template, Prompt a Studio, Prompt a Motion, or Prompt a Motion Premium.
@@ -46,8 +48,11 @@ Use Preset Configs to combine video polishing operations into reusable presets w
     4. Script enhancement.
     5. AI voice-over config.
     6. Captions config.
+    7. Intro scene and Outro scene (see [Add an intro and an outro](#add-an-intro-and-an-outro)).
 
     Finally save the preset. Once saved, it becomes available in your video project.
+
+    Each step card opens collapsed, showing only its on/off switch, so you can see at a glance which steps are on. Turn a step on with its switch, then select **Settings** to open its options. If something is missing when you save, the step that needs attention opens by itself.
 
     Each operation is independent. For example, a preset can generate an AI voice-over from your current script without Script enhancement, or add Captions without an AI voice-over. Captions follow the spoken audio, so for a presentation, which has no audio of its own, they appear only once it has an AI voice-over.
 
@@ -61,13 +66,39 @@ Use Preset Configs to combine video polishing operations into reusable presets w
   </Step>
 </Steps>
 
+## Add an intro and an outro
+
+A preset can add an intro scene at the start of your video and an outro scene at the end.
+
+<Steps>
+  <Step title="Turn on the Intro scene or Outro scene step">
+    In the preset editor, scroll to the **Intro scene** and **Outro scene** cards, which are listed after Captions. Turn on one or both. A preset with only an intro or only an outro is valid.
+  </Step>
+
+  <Step title="Choose a template and settings">
+    Select **Settings** on the card and configure the scene exactly as you would in the Scenes panel. The templates, texts, colors, fonts, duration, Brand Kit, and logo are described in [Intro, outro and chapter scenes](/ai-studio/intro-scene).
+
+    <Note>
+      In a preset, the intro title is not saved. The card shows **Filled from the project name**, and each time you apply the preset the intro title becomes that project's name. All other texts are saved as you enter them and are used on every project.
+    </Note>
+  </Step>
+
+  <Step title="Save the preset">
+    Save the preset as usual.
+  </Step>
+</Steps>
+
+<Tip>
+  Intro and outro scenes are added first, before the other steps, whatever their position in the editor. That way the AI voice-over and captions are created for the final video, including the new scenes.
+</Tip>
+
 ## Apply a preset to a project
 
 Use the Presets panel to choose a preset, apply its configured operations, and verify the completed video.
 
 <Steps>
   <Step title="Select a preset">
-    Open the Presets panel and review the preset’s configured operations, including Background image, Music, Script enhancement, AI voice-over, and Captions. Select the preset you want to use.
+    Open the Presets panel and review the preset’s configured operations, including Intro scene, Outro scene, Background image, Music, Script enhancement, AI voice-over, and Captions. Select the preset you want to use.
 
     <Frame>
       <img src="/images/ai-studio/preset/docv2_8.jpg" alt="Select Preset" />
@@ -75,11 +106,20 @@ Use the Presets panel to choose a preset, apply its configured operations, and v
   </Step>
 
   <Step title="Apply the preset">
-    Select **Apply**. Review the confirmation warning that existing configurations may be overridden, then confirm to start processing. Demokraft processes each configured operation in sequence, and the progress can be monitored as the workflow runs.
+    Select **Apply**. Review the confirmation warning that existing configurations may be overridden, then confirm to start processing. If the project already has an intro or outro, the warning lists it as about to be replaced. Demokraft processes each configured operation in sequence, and the progress can be monitored as the workflow runs.
 
     - You can close the tab; processing continues and the progress shows again when you come back.
     - While a preset is applying, you cannot start another operation on the project.
     - If a step fails, the steps already completed are kept and the remaining steps are skipped. The summary shows what was applied and what was not.
+    - An intro or outro from the preset **replaces** the project's current intro (at the very start) or outro (at the very end), so applying a preset twice never gives you two. A scene you added in the middle of the video is left as it is.
+
+    The confirmation also lists anything in the preset that **will not be applied to this project**, while the rest still runs:
+
+    - the AI voice-over, when the preset's voice is no longer available, cannot speak the project's language, or your AI voice allowance is not enough. You can generate the voice-over afterwards from the Script panel;
+    - an intro or outro logo that was deleted from your brand kit. The scene is added without it;
+    - a scene font that is no longer available. That text uses Inter instead.
+
+    If nothing in the preset can be applied, it does not start.
 
     <Frame>
       <img src="/images/ai-studio/preset/docv2_10.jpg" alt="Apply Preset Confirmation" />
@@ -87,6 +127,30 @@ Use the Presets panel to choose a preset, apply its configured operations, and v
   </Step>
 
   <Step title="Review the video">
-    When processing is complete, play back the video with all selected operations applied to verify the final result. Continue editing afterward to make additional individual adjustments and retain control over the finished video.
+    When processing is complete, a summary lists each step as **Applied**, **Not applied**, **Failed**, or **Not run**, with the reason for any that did not complete. Play back the video with all selected operations applied to verify the final result. Continue editing afterward to make additional individual adjustments and retain control over the finished video.
+
+    An intro or outro added by a preset is an ordinary scene: select it on the timeline to change it, or delete it, as described in [Intro, outro and chapter scenes](/ai-studio/intro-scene#changing-or-removing-a-scene).
   </Step>
 </Steps>
+
+## Troubleshooting
+
+<AccordionGroup>
+  <Accordion title="“This preset cannot be applied” appears before anything starts">
+    The preset refers to something that no longer exists, for example a deleted image, a deleted uploaded music file, or a deleted intro or outro template. The message lists every problem found. Fix what it names, usually by editing the preset in Settings, and apply it again. Nothing on the project changes when this happens.
+
+    A voice-over problem (voice no longer available, a voice that cannot speak the project's language, or not enough allowance) does not stop the preset. The voice-over is shown as not applied and the other steps run, unless the voice-over was the only step.
+  </Accordion>
+
+  <Accordion title="An intro or outro looks the same as before, or its text is in the wrong font">
+    A scene keeps the look it had when it was added. To refresh it, open the scene and apply it again, as described in [Scene videos are rendered once](/ai-studio/intro-scene#scene-videos-are-rendered-once).
+  </Accordion>
+
+  <Accordion title="A step shows “Not run”">
+    An earlier step in the same run failed, so this step never started. Look higher in the summary for the step that failed. Steps that finished before it are kept.
+  </Accordion>
+
+  <Accordion title="I can't start anything else on the project">
+    A preset is still applying. Wait for it to finish. If a run was interrupted, for example by a server restart, the project becomes available again on its own after a while. If it stays busy for an unusually long time, contact support.
+  </Accordion>
+</AccordionGroup>
