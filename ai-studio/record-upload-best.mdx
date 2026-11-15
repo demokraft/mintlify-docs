@@ -1,0 +1,104 @@
+---
+title: "Getting Great Results from Recorded and Uploaded Videos"
+sidebarTitle: "Record & Upload Tips"
+description: "How to record a good product video, and the steps that turn a raw recording into a polished, narrated video."
+---
+
+A practical guide for projects you create by **recording your screen** with the Demokraft AI Chrome extension or by **uploading a screen recording**. It works for web apps and desktop software alike: the extension can record a Chrome tab, an application window, or your entire screen. For slide decks, see [Presentation to Video](/ai-studio/presentation). For the prompt options, see [Prompting best practices](/ai-studio/prompt-a-video-best).
+
+<Warning title="Polish isn't automatic">
+  When your recording opens in the Studio editor, it is still your **raw video**. Demokraft AI prepares it for editing, but it does not add a voiceover, captions, background, music, or effects on its own. **If you export right away, you get your original recording.** Apply the polish steps below first, or apply a [preset](/ai-studio/preset) to do most of them in one click.
+</Warning>
+
+---
+
+## 1. Before you record
+
+The screen you capture is what viewers see. Your narration and script can be changed later; the visuals can't.
+
+* **Plan the steps.** Know what you'll click and in what order. One task or one feature per video works best.
+* **Prepare the screen.** Close unrelated tabs and notifications, use realistic demo data, and keep personal or customer data off screen. If something sensitive slips in, you can hide it later with [blur](/ai-studio/effects-1).
+* **Click on purpose.** In a Chrome extension recording, your clicks mark where the video is split into scenes and where screenshots are captured. Avoid random or extra clicks.
+* **Speak as you go.** Your narration becomes the video's script. Speak clearly. You can keep your own voice in the final video, or fix small slips later by editing the script and switching to an AI voiceover.
+* **Keep the visuals clean.** Move at a steady pace, wait for pages to load, and avoid scrolling back and forth.
+
+<Tip>
+  Uploading a recording from another tool? The same advice applies. Record at 1080p or higher with a close microphone for the best transcription.
+</Tip>
+
+## 2. What happens when your project opens
+
+* **With narration:** Demokraft AI splits the video into scenes and turns what you said into the script, scene by scene. It transcribes your words. It doesn't write a new script for you.
+* **Without narration (a silent video):** **no script is written automatically**, and every scene starts with an empty script. An uploaded video comes in as one single scene. A recording made with the Chrome extension is split into scenes at your clicks, and each scene is still silent. See [Silent videos](#3-silent-videos).
+
+In both cases, nothing else has been changed yet. The next steps are yours.
+
+## 3. Silent videos
+
+A silent recording has no script and no narration until you add them. You have two choices:
+
+<Steps>
+  <Step title="Check the scenes">
+    Each scene should cover one step, so it can have its own line of script. An uploaded silent video is one long scene: use [Split](/ai-studio/trim-split) to break it at each step. A Chrome extension recording is already split at your clicks: review the scenes and split or trim any that are too long.
+  </Step>
+  <Step title="Write a short script for each scene">
+    Type a line or two describing what happens in each scene. Then use AI enhancement to polish the wording. See [Script & Voice-Over](/ai-studio/script-enhance).
+  </Step>
+  <Step title="Generate the AI voiceover">
+    Pick a voice and generate speech. Your video now has narration.
+  </Step>
+</Steps>
+
+Or keep it silent: add [animated text](/ai-studio/textbox-element), [zoom and spotlight](/ai-studio/effects-1), and [background music](/ai-studio/background-music) to guide viewers without a voice.
+
+<Note>
+  A [preset](/ai-studio/preset) that includes script enhancement, AI voiceover, or captions needs a script to work with. On a silent video, write the script first, then apply the preset.
+</Note>
+
+## 4. Polish your video
+
+Work in this order. A new voiceover can change the timing of your scenes, so finish the script and voice before you add effects and captions.
+
+| Step | What to do | Guide |
+|---|---|---|
+| **1. Choose your voice** | Keep your own recorded narration, or switch to an AI voice. Both are fine. See the note below. | [Script & Voice-Over](/ai-studio/script-enhance) |
+| **2. Fix the script** *(AI voice only)* | Correct wording, remove filler, and polish it with AI. Make sure product names are right. | [Script & Voice-Over](/ai-studio/script-enhance), [Pronunciation & vocabulary](/ai-studio/pron-vocab) |
+| **3. Cut what you don't need** | Trim slow parts, split long scenes, and delete mistakes. | [Trim & split](/ai-studio/trim-split), [Add, update & delete scenes](/ai-studio/seg-add-del) |
+| **4. Generate the AI voiceover** *(AI voice only)* | Generate it after your final script change, and again after any later change. | [Script & Voice-Over](/ai-studio/script-enhance) |
+| **5. Guide the viewer's eye** | Add zooms, spotlights, arrows, animated text, and logos. | [Zoom, spotlight & blur](/ai-studio/effects-1), [Rectangles, arrows & lines](/ai-studio/effects-2), [Animated text](/ai-studio/textbox-element), [Image & video elements](/ai-studio/image-video-element) |
+| **6. Brand it** | Add a background, an intro, and an outro. Select your Brand Kit in the intro and outro scenes to use your colors, fonts, and logo. | [Background image](/ai-studio/background-image), [Intro, outro & chapter scenes](/ai-studio/intro-scene), [Brand Kit](/ai-studio/brand-kit) |
+| **7. Finish** | Add captions and background music. | [Captions](/ai-studio/captions), [Background music](/ai-studio/background-music) |
+
+<Note>
+  **Keeping your own voice?** Skip steps 2 and 4. Your recorded narration plays as it is. Script enhancement only helps when you use an AI voice: your original voice can't be regenerated, so an edited or enhanced script changes what viewers hear only when an AI voice reads it.
+</Note>
+
+<Tip>
+  **Do it in one click.** A [preset](/ai-studio/preset) saves your usual choices (script enhancement, AI voiceover, captions, background, music, intro, and outro) and applies them to any recorded or uploaded project.
+</Tip>
+
+## 5. Review, then export
+
+* **Play the whole video** before you export. Check that the voiceover matches what's on screen and that effects appear at the right moments.
+* **Export** as MP4 or as an animated GIF. See [Export](/ai-studio/export).
+* **Reuse it.** Turn the same project into a help doc with [Generate docs](/ai-studio/generate-doc), or into other languages with [Translation](/ai-studio/translate).
+
+## 6. Common mistakes
+
+* **Exporting right after recording or uploading.** You get the raw video. Apply the polish steps or a preset first.
+* **Expecting a script for a silent video.** Silent videos start with an empty script. Write it yourself, then enhance it with AI.
+* **Enhancing the script but keeping your own voice.** Your recorded audio doesn't change. To use an enhanced script, switch to an AI voice.
+* **Editing the script but not regenerating the AI voice.** Script changes don't change the audio. Generate the AI voiceover again.
+* **Adding effects before the voiceover.** A new voiceover can shift scene timing. Do script and voice first.
+* **Recording everything in one take.** Long, multi-topic recordings are hard to polish. Record one task per video.
+
+## 7. Checklist before you export
+
+* [ ] Voice chosen: your own narration, or an AI voice
+* [ ] *(AI voice)* Script corrected and enhanced, or written for a silent video
+* [ ] *(AI voice)* Product names spelled and pronounced correctly
+* [ ] Slow parts and mistakes trimmed or deleted
+* [ ] *(AI voice)* AI voiceover generated after the final script change
+* [ ] Effects, background, intro, and outro added where they help
+* [ ] Captions and music added
+* [ ] Whole video played back once

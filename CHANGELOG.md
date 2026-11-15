@@ -2,6 +2,122 @@
 
 Datewise log of changes to this docs repo (`docs/mintlify-docs/`). Most recent first. See `CLAUDE.md` for the required entry format. Entries before 2026-11-01 name this file `docs/CHANGELOG.md` and `CLAUDE.md` as `docs/CLAUDE.md`, their location at the time.
 
+## 2026-11-15 — Brand Kit recommended for a consistent brand theme and language
+
+**Scope**: `ai-studio/prompt-a-video-best.mdx`, `ai-studio/guidance-video-type.mdx`, `ai-studio/record-upload-best.mdx`.
+
+**Why**: owner request: Brand Kit is the recommended way to keep brand theme, language, CTA, tagline and logo consistent without repeating them in every prompt or project.
+
+**What changed**:
+- `ai-studio/prompt-a-video-best.mdx` — § 3 Tip recommending a Brand Kit (what it stores, attach once, no repeating in each prompt); checklist puts the Brand Kit first as recommended.
+- `ai-studio/guidance-video-type.mdx` — first-video tip "Set up your brand once" linking `ai-studio/brand-kit`.
+- `ai-studio/record-upload-best.mdx` — "Brand it" step: select the Brand Kit in the intro and outro scenes (as in `ai-studio/intro-scene`), link added.
+
+## 2026-11-15 — Record & Upload Tips: AI voice is optional; script enhancement needs an AI voice
+
+**Scope**: `ai-studio/record-upload-best.mdx`.
+
+**Why**: owner clarification: users can keep their original narration, but an original voice can't be regenerated, so script enhancement only takes effect with an AI voice.
+
+**What changed**:
+- "Speak as you go" says you can keep your own voice, or fix slips by editing the script and switching to an AI voice.
+- Polish table: new step 1 "Choose your voice"; "Fix the script" and "Generate the AI voiceover" marked AI voice only; a Note for users keeping their own voice (skip those steps; an enhanced script needs an AI voice to be heard).
+- Common mistakes: "Enhancing the script but keeping your own voice" added; the regenerate bullet names the AI voice.
+- Checklist: voice choice item; script, product-name and voiceover items marked AI voice.
+
+## 2026-11-15 — Presets named as one-click polish on the first-time-user pages
+
+**Scope**: `ai-studio/guidance-video-type.mdx`, `getting-started/gettingstarted.mdx`.
+
+**Why**: owner request: tell users who want one-click polish to use a preset (Record & Upload Tips already does).
+
+**What changed**:
+- `ai-studio/guidance-video-type.mdx` — first-video tip "Polish in one click with a preset", linking `ai-studio/preset`.
+- `getting-started/gettingstarted.mdx` — the export Warning names a preset for one-click polish, linking `ai-studio/preset`.
+
+## 2026-11-15 — Self-review: script wording, clicks split scenes, audience sentence
+
+**Scope**: `ai-studio/guidance-video-type.mdx`, `ai-studio/record-upload-best.mdx`.
+
+**Why**: end-of-task self-review of the day's changes.
+
+**What changed**:
+- `ai-studio/guidance-video-type.mdx` — "AI writes the script and adds the voiceover…" became "AI helps with…", because a recording's script is transcribed (a silent one starts empty) and nothing is added until applied, as Record & Upload Tips says; the audience sentence reworded; the before-and-after row names all prompt options (each offers the Comparison video type).
+- `ai-studio/record-upload-best.mdx` — "Click on purpose" says clicks in an extension recording also split it into scenes (owner confirmed).
+
+## 2026-11-15 — "What can you create?" and "Which video should I make?" kept separate and cross-linked; references to the new guides
+
+**Scope**: `getting-started/what-content.mdx`, `ai-studio/guidance-video-type.mdx`, `introduction.mdx`, `ai-studio/overview.mdx`, `getting-started/gettingstarted.mdx`.
+
+**Why**: the two pages overlap on "what you can make". Kept separate (owner decision): `what-content` is the ideas catalog by team, `guidance-video-type` is how to start, which option to use, and what Demokraft AI can't do. Both, and Record & Upload Tips, needed links from the pages first-time users read.
+
+**What changed**:
+- `getting-started/what-content.mdx` — Tip linking to "Which video should I make?" after the team cards.
+- `ai-studio/guidance-video-type.mdx` — the Tip to "What can you create?" says what each page is for; help doc row back to recorded, uploaded, or presentation projects (owner confirmed presentation projects support docs, matching the Document tab in web_seller `Studio.js`).
+- `introduction.mdx` — the What Content Tip also links "Which video should I make?".
+- `ai-studio/overview.mdx` — "What you can create" links "What can you create?"; the "Upload a screen recording" card, which had no link, links Record & Upload Tips.
+- `getting-started/gettingstarted.mdx` — Warning before the export step: a recording isn't polished automatically, with a link to Record & Upload Tips.
+
+## 2026-11-15 — Video type guide: website URL start, screenshots optional, option order
+
+**Scope**: `ai-studio/guidance-video-type.mdx`, `ai-studio/record-upload-best.mdx`.
+
+**Why**: owner review: the intro left out starting from a website URL; prompt-based videos don't need product screenshots; products can be web apps or desktop software; preferred option order.
+
+**What changed**:
+- `ai-studio/guidance-video-type.mdx` — intro names the website URL as a starting point and covers web apps and desktop software; "built for" text no longer implies screens are required; "When to use which option" order is record, upload, presentation, Prompt a Motion Premium, Prompt a Motion, Prompt a Studio, template, with a line that the prompt options start from a URL or description and screenshots are optional; the "can't do" screenshot bullet and the first-video tip say screenshots are optional.
+- `ai-studio/record-upload-best.mdx` — intro says recording works for web apps and desktop software (Chrome tab, application window, or entire screen, as in `ai-studio/screen-rec`).
+
+## 2026-11-15 — New Record & Upload Tips guide (record-upload-best); silent videos; polish isn't automatic
+
+**Scope**: `ai-studio/record-upload-best.mdx` (new), `ai-studio/screen-rec.mdx`, `docs.json`, `ai-studio/overview.mdx`, `ai-studio/guidance-video-type.mdx`.
+
+**Why**: users record or upload a video and export it right away, expecting it to be polished automatically, and expect a script for silent videos. Recorded and uploaded projects had no best-practices guide (the prompt options do).
+
+**What changed**:
+- `ai-studio/record-upload-best.mdx` — new guide: "polish isn't automatic" warning (export right away = original recording); before you record (now the single home of the recording tips); what happens when the project opens (narration is transcribed, not rewritten; a silent video gets no script and every scene starts empty; an uploaded silent video is one scene, a Chrome extension recording is split at the clicks and each scene stays silent, confirmed by the owner and in `studio/dk_ai_studio/app/core/dk_video_process.py` no-voiceover branch); silent videos (check or split the scenes, write the script, enhance with AI, generate voice, or keep it silent; presets need a script); polish order (script, cut, voice, effects, brand, captions and music) with a link per step; presets as one-click polish; review and export; common mistakes; checklist. Feature details stay in each feature page.
+- `ai-studio/screen-rec.mdx` — "Best Practices During Recording" bullets moved to the new guide; the section is now a pointer.
+- `docs.json` — new page after the Chrome Extension page.
+- `ai-studio/overview.mdx`, `ai-studio/guidance-video-type.mdx` — one-line pointers to the new guide.
+
+## 2026-11-15 — Self-review fixes: main SaaS examples, camera clips, links to the new guides
+
+**Scope**: `ai-studio/guidance-video-type.mdx`, `ai-studio/prompt-a-video-best.mdx`, `ai-studio/overview.mdx`, `ai-studio/pamp.mdx`.
+
+**Why**: owner review of the two entries below: list the main SaaS examples, say where a filmed clip can go, and make the new pages reachable.
+
+**What changed**:
+- `ai-studio/guidance-video-type.mdx` — use-case table rebuilt from the owner's main examples (SaaS launch/intro/explainer, feature introductions and release announcements, walkthroughs and app demos, step-by-step demos, setup and configuration guides, dashboard demos, before-and-after comparisons, education/support/training, help doc guides, GIFs, social clips); camera footage: a clip goes in as a scene (recorded, uploaded, presentation projects) or as an image/video element (template projects); "can't show your real product screens" replaces the placeholder wording, which held only for Prompt a Studio and Prompt a Motion; Premium feedback marked paid-plan; the "plan the scenes" tip folded into the shot-list section.
+- `ai-studio/prompt-a-video-best.mdx` — the § 8 Premium note no longer repeats the paid-plan feedback point (stated in § 1 and § 10).
+- `ai-studio/overview.mdx` — one-line pointer to "Which video should I make?".
+- `ai-studio/pamp.mdx` — Tip linking to Prompting best practices, which now covers Premium.
+
+## 2026-11-15 — Prompting best practices covers Prompt a Motion Premium; what a prompt is
+
+**Scope**: `ai-studio/prompt-a-video-best.mdx`.
+
+**Why**: the page covered only Prompt a Studio and Prompt a Motion, and users write photoreal shot lists (camera, lenses, per-second timelines, exact 10-second length) instead of a product description. Premium facts checked against web_seller code (shared composer: same 40–8,000 character prompt, 5,000 character instructions, 5 images; durations 20–90 s, free 20 s) and `studio/dk_ai_studio/plan_docs/pampv3/pampv3-rules.md` (one review, Rule 35; video type detection; content built from stated facts).
+
+**What changed**:
+- Title and intro name all three prompt options.
+- New "What a prompt is (and isn't)" section: a prompt is a product description with context for the video; include / leave out table (no shot lists, camera directions, photoreal requests, or picker settings typed as text).
+- New "Using this guide with Prompt a Motion Premium" table: which sections apply, which differ, which don't.
+- § 1 table gains a Premium column and a Format row; rule of thumb names Premium.
+- § 5 note: the fact-to-scene idea applies to Premium, scene types depend on the style. § 6: points 1–5 apply to all; missing images scoped to Studio and Motion.
+- § 7: Premium durations; custom lengths can't be typed; Video Type works the same in all three; Premium languages and no translation.
+- § 8: Premium notes (style first, format before generating, optional voiceover, paid-plan feedback). § 10: Premium has a single review, closing the page doesn't cancel; the cancel warning scoped to Studio and Motion; after-the-build Premium bullet.
+- § 11: shot-list pitfall. § 13: Premium checklist item.
+
+## 2026-11-15 — New "Choose your video type" guide for first-time users
+
+**Scope**: `ai-studio/guidance-video-type.mdx` (new), `docs.json`.
+
+**Why**: users are trying Demokraft AI for ultra-realistic or reels-style videos, which it is not built for. First-time users need one short page that says what kinds of videos it makes, which creation option to start from, and what to do when they need realistic footage.
+
+**What changed**:
+- `ai-studio/guidance-video-type.mdx` — new page for first-time users: who it is for (teams at software, SaaS and technology companies: leaders, product, product marketing, sales, customer success, L&D); what Demokraft AI is built for, as a use case → best way to start table (launch/explainer/intro, walkthrough/how-to, customer education/support, training, help docs and guides, GIFs, social clips); "When to use which option" table covering all seven creation options (use-it-when + one example each) and an editable-vs-fast note; social formats (portrait and square through Prompt a Motion Premium only; every other option is landscape 16:9, checked against web_seller code); "What Demokraft AI can't do" (no realistic/cinematic footage, no avatars or presenters, no lifestyle reels, no podcasts or webinar videos (short webinar teasers or recaps stay in scope, matching `getting-started/what-content`), not a camera-footage editor, no unseen product screens, no invented facts, prompt videos up to 90 seconds, no format change later, no hands-on editing or translation of motion videos); what to do when realistic footage is needed (own clips as scenes or elements, AI Creative Service); "Write a product description, not a shot list" with a won't-work / works example pair (a fictional product, no real brand); first-video tips, including "let Demokraft AI plan the scenes" (the storyboard is planned for you and reviewed before the build). Durations, languages, plan limits and prompting advice are not repeated; the page links to `getting-started/what-content`, `ai-studio/prompt-a-video-best`, `ai-studio/pamp#video-formats` and each option's guide.
+- `docs.json` — page added to the AI Studio group after the Overview.
+
 ## 2026-11-13 — Presets guide covers intro and outro scenes; Intro/Outro Scene Options page covers all 24 templates, Brand Kit, logo and fonts
 
 **Scope**: `ai-studio/preset.mdx`, `ai-studio/intro-scene.mdx`, `introduction.mdx`, `ai-studio/overview.mdx`.
