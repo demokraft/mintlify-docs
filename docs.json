@@ -55,7 +55,9 @@
             "group": "AI Studio",
             "pages": [
               "ai-studio/overview",
+              "ai-studio/guidance-video-type",
               "ai-studio/screen-rec",
+              "ai-studio/record-upload-best",
               "ai-studio/background-image",
               "ai-studio/background-music",
               "ai-studio/script-enhance",
