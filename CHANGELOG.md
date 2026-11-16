@@ -2,6 +2,24 @@
 
 Datewise log of changes to this docs repo (`docs/mintlify-docs/`). Most recent first. See `CLAUDE.md` for the required entry format. Entries before 2026-11-01 name this file `docs/CHANGELOG.md` and `CLAUDE.md` as `docs/CLAUDE.md`, their location at the time.
 
+## 2026-11-16 — Choose your video type: audience beyond customers and sales
+
+**Scope**: `ai-studio/guidance-video-type.mdx`.
+
+**Why**: owner review: the page read as if videos were only for customers and the sales team, while teams also use them for internal training, L&D, onboarding, partners, and support. The page is now linked from the web_seller welcome modal and the Home title (see `web_seller/changelog.md` 2026-11-16 entry).
+
+**What changed**:
+- `ai-studio/guidance-video-type.mdx` — the "Use it to…" sentence in the opening now covers customers and prospects, the sales team, and employees, partners, and support teams through internal training and L&D programs.
+
+## 2026-11-15 — Prompting best practices: language lists scoped per option
+
+**Scope**: `ai-studio/prompt-a-video-best.mdx`.
+
+**Why**: owner review: Prompt a Studio / Prompt a Motion and Prompt a Motion Premium support different languages, and the § 7 list was titled as if it applied to all three.
+
+**What changed**:
+- § 7 Language: opening line covers all three options; a bold line says the lists differ; the 39-language box is titled for Prompt a Studio and Prompt a Motion; the Premium note became a titled box (fewer languages, some styles fewer still, styles hidden when they don't support the language) that points to `ai-studio/pamp` for the list (single source; matches web_seller `pampStyleConfig.js`, 16 languages, none staged).
+
 ## 2026-11-15 — Brand Kit recommended for a consistent brand theme and language
 
 **Scope**: `ai-studio/prompt-a-video-best.mdx`, `ai-studio/guidance-video-type.mdx`, `ai-studio/record-upload-best.mdx`.
