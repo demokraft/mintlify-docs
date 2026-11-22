@@ -2,6 +2,17 @@
 
 Datewise log of changes to this docs repo (`docs/mintlify-docs/`). Most recent first. See `CLAUDE.md` for the required entry format. Entries before 2026-11-01 name this file `docs/CHANGELOG.md` and `CLAUDE.md` as `docs/CLAUDE.md`, their location at the time.
 
+## 2026-11-22 — Remove stale pages not in the navigation
+
+**Scope**: 19 deleted pages (listed below), `index.mdx`, `.atlas-analysis.json` (deleted).
+
+**Why**: owner cleanup: these pages were stale and not listed in `docs.json` `navigation`, so they were unreachable from the sidebar. Checked beforehand that no remaining page links to them; `docs.json` never referenced them, so it needed no change.
+
+**What changed**:
+- Deleted `account/managing-seats.mdx`, `ai-hub/ai-demo-agent.mdx`, `ai-hub/analytics.mdx`, `ai-hub/custom-branding.mdx`, `ai-hub/lead-intelligence.mdx`, `ai-studio/ai-script-enhancement.mdx`, `ai-studio/ai-voiceover.mdx`, `ai-studio/exporting-content.mdx`, `ai-studio/multilingual-support.mdx`, `ai-studio/recording-and-upload.mdx`, `ai-studio/templates.mdx`, `ai-studio/visual-effects.mdx`, `getting-started/account-setup.mdx`, `getting-started/quickstart.mdx`, `integrations/calendly.mdx`, `integrations/hubspot.mdx`, `integrations/salesforce.mdx`, `integrations/zapier.mdx`, `introduction-old.mdx`.
+- Deleted `.atlas-analysis.json` — a leftover from the initial Mintlify scaffold (2026-11 first commit) holding an obsolete navigation and feature list that named 14 of the deleted pages; nothing in the site or scripts read it.
+- `index.mdx` — the "Create your first demo" card now links to `/getting-started/gettingstarted` (sidebar title "Quickstart") instead of the deleted `/getting-started/quickstart`.
+
 ## 2026-11-16 — Choose your video type: audience beyond customers and sales
 
 **Scope**: `ai-studio/guidance-video-type.mdx`.
